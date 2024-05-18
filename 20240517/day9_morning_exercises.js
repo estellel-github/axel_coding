@@ -47,3 +47,4 @@ var centimeterRod = meterRod * 100;
 var kilometerRod = meterRod / 1000;
 console.log(`If the length of my rod is ${meterRod} meters long, then it is ${centimeterRod} centimeters long, and ${kilometerRod} kilometers long.`);
 
+
