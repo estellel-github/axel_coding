@@ -79,3 +79,13 @@ while (count >= 1) {
   console.log(`Count: ${count}`);
   count--;
 }
+
+// Do while
+let password;
+do {
+password = prompt("Enter your password:", "");
+if (password.length < 8) {
+alert("Password must be at least 8 characters long.");
+}
+} while (password.length < 8);
+alert("Password accepted.");
