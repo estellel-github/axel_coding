@@ -80,12 +80,68 @@ while (count >= 1) {
   count--;
 }
 
-// Do while
-let password;
-do {
-password = prompt("Enter your password:", "");
-if (password.length < 8) {
-alert("Password must be at least 8 characters long.");
+// // Do while
+// let password;
+// do {
+// password = prompt("Enter your password:", "");
+// if (password.length < 8) {
+// alert("Password must be at least 8 characters long.");
+// }
+// } while (password.length < 8);
+// alert("Password accepted.");
+
+
+// Create a class software engineers, add some dummy data to it, and then push your info there!
+
+// Using a function
+
+// function SoftwareEngineer(name, seniority, language, location) {
+//   this.name = name;
+//   this.seniority = seniority;
+//   this.language = language;
+//   this.location = location;
+//   this.displayEngineer = function () {
+//     console.log(`This software engineer is called ${this.name}. They are at ${seniority} level. They work primarily with ${this.language}. They are based in ${this.location}.`)
+//   }
+// }
+
+// const engineer1 = new SoftwareEngineer("Jane", "senior", "TypeScript", "San Francisco");
+
+// engineer1.displayEngineer();
+
+// Using a class
+class SoftwareEngineer {
+  constructor(name, seniority, language, location) {
+    this.name = name;
+    this.seniority = seniority;
+    this.language = language;
+    this.location = location;
+  }
+
+  displayEngineer() {
+    console.log(`${this.name} is a ${this.seniority} software engineer. They work primarily with ${this.language}. They are based in ${this.location}.`);
+  }
 }
-} while (password.length < 8);
-alert("Password accepted.");
+
+const engineer1 = new SoftwareEngineer("Jane", "senior", "TypeScript", "San Francisco");
+
+engineer1.displayEngineer();
+
+const engineers = [];
+
+engineers.push(new SoftwareEngineer("Jane", "senior", "TypeScript", "San Francisco"));
+engineers.push(new SoftwareEngineer("Pablo", "junior", "Kotlin", "Madrid"));
+engineers.push(new SoftwareEngineer("Amy", "junior", "Swift", "Surrey"));
+engineers.push(new SoftwareEngineer("Laila", "senior", "Python", "London"));
+
+console.log(engineers);
+
+// Using for to iterate over the array (longer but more explicit)
+// for (let i = 0; i < engineers.length; i++) {
+//   const engineer = engineers[i];
+//   engineer.displayEngineer();
+// }
+
+// Using forEach to iterate over the array (more concise and readable)
+engineers.forEach(i => i.displayEngineer());
+// i refers to the element, could be anything (e.g. "engineer" to be more explicit)
