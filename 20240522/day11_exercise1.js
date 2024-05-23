@@ -12,6 +12,9 @@
 let globalVar = 10;
 function localScope() {
   let localVar = 20;
+  console.log(localVar)
+  console.log(globalVar)
 }
 console.log(globalVar) // Output: 10
-console.log(localVar) // ReferenceError: localVar is not defined
+localScope()
+// console.log(localVar) // ReferenceError: localVar is not defined
