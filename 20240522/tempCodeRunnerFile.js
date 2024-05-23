@@ -8,22 +8,33 @@
 // ● Call the findMax function with a sample array and print the result
 // to the console.
 
-// MAKING RANDOM CHANGE HERE
-
+/*
 function findMax(array) {
+  
   let biggerNum = array[0];
 
-  for (let i = 1; i < array.length; i++) {
+  for (let i = 1; i <= array.length; i++) {
     if (array[i] > biggerNum) {
       biggerNum = array[i];
     }
   }
-  
+
   return biggerNum;
 }
+*/
 
-// MAKING RANDOM CHANGE HERE TOO
+function findMax(array) {
+  
+let biggerNum = array[0];
+let i = 1;
+while (array[i] < array.length) {
+  if (array[i] > biggerNum) {
+    biggerNum = array[i];
+    }
+    i++;
+  }
+}
 
-const myNumbers = [1, 45, 75, 3, 2.3]
+const myNumbers = [1, 45, 75, 230, 3, 2.3]
 
 console.log(`${findMax(myNumbers)}`)

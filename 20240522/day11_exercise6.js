@@ -8,18 +8,34 @@
 // ● Call the findMax function with a sample array and print the result
 // to the console.
 
+/*
 function findMax(array) {
+  
   let biggerNum = array[0];
 
-  for (let i = 1; i < array.length; i++) {
+  for (let i = 1; i <= array.length; i++) {
     if (array[i] > biggerNum) {
       biggerNum = array[i];
     }
   }
-  
+
   return biggerNum;
 }
+*/
 
-const myNumbers = [1, 45, 75, 3, 2.3]
+function findMax(array) {
+  
+let biggerNum = array[0];
+let i = 1;
+while (i < array.length) {
+  if (array[i] > biggerNum) {
+    biggerNum = array[i];
+    }
+    i++;
+  }
+  return biggerNum
+}
 
-console.log(`${findMax(myNumbers)}`)
+const myNumbers = [1, 45, 3, 75, 230, 3, 2.3]
+
+console.log(`The biggest number in the array ${myNumbers} is ${findMax(myNumbers)}`)
