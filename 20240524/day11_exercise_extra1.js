@@ -21,7 +21,7 @@ const charlie = new student("Charlie", [80, 85, 88]);
 const classroom = {
   students: [],
   averageGrades: {},
-}
+};
 
 classroom.students.push(alice, bob, charlie);
 
