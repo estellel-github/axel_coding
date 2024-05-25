@@ -1,9 +1,20 @@
-const students = ["Zana", "Bojana", "Bernadetta", "Daniela", "Francieli", "Mariem", "Estelle", "Regina", "Shenoa", "Tina"]
+const students = [
+  "Zana",
+  "Bojana",
+  "Bernadetta",
+  "Daniela",
+  "Francieli",
+  "Mariem",
+  "Estelle",
+  "Regina",
+  "Shenoa",
+  "Tina",
+];
 
-students.sort()
+students.sort();
 
-console.log(students)
+console.log(students);
 
-students.sort().reverse()
+students.sort().reverse();
 
-console.log(students)
+console.log(students);

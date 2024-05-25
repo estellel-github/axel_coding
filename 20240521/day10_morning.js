@@ -2,10 +2,9 @@
 
 let userAge1 = 18;
 if (userAge1 >= 18) {
-  console.log("You are allowed to view this content. Have fun!")
-}
-else {
-  console.log("Oops! You must be 18 or older to view this content.")
+  console.log("You are allowed to view this content. Have fun!");
+} else {
+  console.log("Oops! You must be 18 or older to view this content.");
 }
 
 // TEST 2: Checking user age, can drink if 18 or over
@@ -14,59 +13,74 @@ let userAge2 = 12;
 let legalDrinkingAge = 18;
 
 if (userAge2 < legalDrinkingAge) {
-  console.log("You are not old enough to drink alcohol!")
-}
-else {
-  console.log("You are old enough to drink alcohol! Cheers!")
+  console.log("You are not old enough to drink alcohol!");
+} else {
+  console.log("You are old enough to drink alcohol! Cheers!");
 }
 
 let userAge3 = 78;
 let retirementAge = 75;
 if (userAge3 < retirementAge) {
   let yearsLeft = retirementAge - userAge3;
-  console.log(`You have ${yearsLeft} year(s) left until retirement.`)
-}
-else {
-  console.log("You're old enough to retire! Congrats!")
+  console.log(`You have ${yearsLeft} year(s) left until retirement.`);
+} else {
+  console.log("You're old enough to retire! Congrats!");
 }
 
 // TEST 3: Difference between == and === in JavaScript
 
 if (7 == "7") {
-  console.log("This is true; using == means checking for loose equality (across data types) between the operands. Type coercion is attempted: the string is converted to a number before performing the comparison.")
+  console.log(
+    "This is true; using == means checking for loose equality (across data types) between the operands. Type coercion is attempted: the string is converted to a number before performing the comparison."
+  );
 }
 
 if (7 == 7) {
-  console.log("This is true; we are checking for loose equality but both operands are anyway of the same type (integer).")
+  console.log(
+    "This is true; we are checking for loose equality but both operands are anyway of the same type (integer)."
+  );
 }
 
 if (7 === "7") {
-  console.log("/!\ This will NOT be displayed since the result of the statement is false.")
-}
-else {
-  console.log("This is false; we are checking for strict equality, but the operands are of different data types (integer vs string) and no type coercion is applied.")
+  console.log(
+    "/! This will NOT be displayed since the result of the statement is false."
+  );
+} else {
+  console.log(
+    "This is false; we are checking for strict equality, but the operands are of different data types (integer vs string) and no type coercion is applied."
+  );
 }
 
 if (7 === 7) {
-  console.log("This is true; we are checking for strict equality, and the operands are of same data type (integer) AND same value of 7, so the result of the comparison is true.")
+  console.log(
+    "This is true; we are checking for strict equality, and the operands are of same data type (integer) AND same value of 7, so the result of the comparison is true."
+  );
 }
 
 // TEST 4: String concatenation in case of addition vs subtraction
 
 if (2 + 2 === 4) {
-  console.log("This returns 4 as the two operands have data type integer, so the + sign means arithmetic addition.")
+  console.log(
+    "This returns 4 as the two operands have data type integer, so the + sign means arithmetic addition."
+  );
 }
 
 if ("2" + "2") {
-  console.log("This returns ''22'' because the operands are both of string type, so the + sign means string concatenation.")
+  console.log(
+    "This returns ''22'' because the operands are both of string type, so the + sign means string concatenation."
+  );
 }
 
 if (2 + 2 - 2 === 2) {
-  console.log("This returns 2 since all operands are integers so the compiler applies arithmetic addition then subtraction.")
+  console.log(
+    "This returns 2 since all operands are integers so the compiler applies arithmetic addition then subtraction."
+  );
 }
 
 if ("4" + "2" - "2" === 40) {
-  console.log("This returns 40. Associativity for arithmetic operators is left-to-right!")
+  console.log(
+    "This returns 40. Associativity for arithmetic operators is left-to-right!"
+  );
 }
 
 console.log("4" + "2" - "2");
@@ -82,19 +96,15 @@ Less than 0 prints an error
 let userAge = 23;
 
 if (userAge >= 18) {
-  console.log("You're an adult!")
-}
-else if (userAge < 18 && userAge >= 13 ) {
-  console.log("You're a young adult!")
-}
-else if (userAge < 13 && userAge > 0) {
-  console.log("You're a kid!")
-}
-else if (userAge === 0) {
-  console.log("You're a baby!")
-}
-else if (userAge < 0) {
-  console.log("Error! You can't be younger than 0.")
+  console.log("You're an adult!");
+} else if (userAge < 18 && userAge >= 13) {
+  console.log("You're a young adult!");
+} else if (userAge < 13 && userAge > 0) {
+  console.log("You're a kid!");
+} else if (userAge === 0) {
+  console.log("You're a baby!");
+} else if (userAge < 0) {
+  console.log("Error! You can't be younger than 0.");
 }
 
 /* TEST 6: 
@@ -133,14 +143,16 @@ let gymOpeningTime = 7;
 let gymLatestEntryTime = 21;
 let currentTime = 3;
 if (!(currentTime >= gymOpeningTime && currentTime < gymLatestEntryTime)) {
-  console.log("Regardless of your shape, the gym is closed at the moment.")
-}
-else {
+  console.log("Regardless of your shape, the gym is closed at the moment.");
+} else {
   if (severelyOutOfShape === true) {
-    console.log("You're severely out of shape and the gym is open. Head there now!")
-  }
-  else {
-    console.log("You're in great shape today, you can go to the gym some other day!")
+    console.log(
+      "You're severely out of shape and the gym is open. Head there now!"
+    );
+  } else {
+    console.log(
+      "You're in great shape today, you can go to the gym some other day!"
+    );
   }
 }
 
@@ -235,23 +247,27 @@ else {
 */
 
 let currentDay = 3;
-const weekArray = ["Monday","Tuesday","Wednesday","Thursday","Friday"];
+const weekArray = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
 
-if ((currentDay === 6 || currentDay === 7)) {
-  console.log("It's the weekend! Go out and enjoy life!")
+if (currentDay === 6 || currentDay === 7) {
+  console.log("It's the weekend! Go out and enjoy life!");
+} else {
+  console.log(
+    `It's ${
+      weekArray[currentDay - 1]
+    } and you have to work... Schade! But only ${
+      5 - currentDay
+    } more day(s) until the weekend!`
+  );
 }
-else {
-  console.log(`It's ${weekArray[currentDay-1]} and you have to work... Schade! But only ${5-currentDay} more day(s) until the weekend!`)
-}
-
 
 // TEST 9 Ternary operator (check even or odd number)
 
 let number = 7;
 
-let evenOrOdd = (number % 2 === 0) ? "Even" : "Odd";
+let evenOrOdd = number % 2 === 0 ? "Even" : "Odd";
 
-console.log(evenOrOdd)
+console.log(evenOrOdd);
 
 // TEST 10 Switch statement -- Now let’s implement a switch statement for all the months in a year, instead of using a month name, let’s use a number to indicate month
 
@@ -260,43 +276,43 @@ let monthName;
 
 switch (month) {
   case 1:
-  monthName = "January";
-  break;
+    monthName = "January";
+    break;
   case 2:
-  monthName = "February";
-  break;
+    monthName = "February";
+    break;
   case 3:
-  monthName = "March";
-  break;
+    monthName = "March";
+    break;
   case 4:
-  monthName = "April";
-  break;
+    monthName = "April";
+    break;
   case 5:
-  monthName = "May";
-  break;
+    monthName = "May";
+    break;
   case 6:
-  monthName = "June";
-  break;
+    monthName = "June";
+    break;
   case 7:
-  monthName = "July";
-  break;
+    monthName = "July";
+    break;
   case 8:
-  monthName = "August";
-  break;
+    monthName = "August";
+    break;
   case 9:
-  monthName = "September";
-  break;
+    monthName = "September";
+    break;
   case 10:
-  monthName = "October";
-  break;
+    monthName = "October";
+    break;
   case 11:
-  monthName = "November";
-  break;
+    monthName = "November";
+    break;
   case 12:
-  monthName = "December";
-  break;
+    monthName = "December";
+    break;
   default:
-  monthName = "not a month. Use a number between 1 and 12";
+    monthName = "not a month. Use a number between 1 and 12";
 }
 console.log(`The month you entered is ${monthName}!`);
 
@@ -319,7 +335,7 @@ let weightKg = 5;
 
 function converter(inputKg) {
   if (inputKg < 0) {
-    return "Cannot calculate with negative value. Please enter a positive weight."  
+    return "Cannot calculate with negative value. Please enter a positive weight.";
   }
   let outputLb = inputKg * 2.20462;
   return `${weightKg} kg = ${outputLb} lb`;
@@ -328,14 +344,14 @@ function converter(inputKg) {
 console.log(converter(weightKg));
 
 // TEST 13
-// Try writing a program with functional expressions checking if the number is odd or even. 
+// Try writing a program with functional expressions checking if the number is odd or even.
 // Hint: we use % 2 to check the remainder
 
 let numberToCheck = 9;
 function isEvenOrOdd(num) {
   if (num % 2 === 0) {
-    return "The number is even!"
+    return "The number is even!";
   }
-  return "The number is odd!"
+  return "The number is odd!";
 }
-console.log(isEvenOrOdd(numberToCheck))
+console.log(isEvenOrOdd(numberToCheck));

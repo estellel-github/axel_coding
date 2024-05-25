@@ -36,15 +36,27 @@ console.log(`The area of a rectangle with a ${length} cm length and a ${width} c
 */
 
 // Exercise 4: Documenting Functionalities using comments
+
+// Let user pick value "length"
 let length = (
   prompt("Let's make a rectangle! Please input the length.")
-); // PREV: Declare variable "length", let user pick value through prompt
-// Let user pick value "length"
+); 
+
+// Let user pick value "width"
 let width = (
   prompt("Now, please input the width!")
-); // PREV: Declare variable "width", let user pick value through prompt
-// Let user pick value "width"
-let area = length * width; // Declare variable "area", assign value of product of length x width
-console.log(`The area of a rectangle with a ${length} cm length and a ${width} cm width is: ${area} cm²`);
-// PREV: Print result to the console: print string of text including the three variables using interpolation
+); 
+
+// Declare variable "area"
+let area = length * width; 
+
 // Print result to the console
+console.log(`The area of a rectangle with a ${length} cm length and a ${width} cm width is: ${area} cm²`);
+
+
+
+// Previous comments! TOO LONG! Get used to commenting sparsely and keep separate notes if needed
+// PREV: Declare variable "length", let user pick value through prompt
+// PREV: Declare variable "width", let user pick value through prompt
+// Declare variable "area", product of length + width
+// PREV: Print result to the console: print string of text including the three variables using interpolation

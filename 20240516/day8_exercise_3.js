@@ -38,13 +38,11 @@ if (true) {
 }
 // console.log(c); // Error: c is not defined
 
-
 // TESTING CONST
 // Variables declared with const are block-scoped, similar to let.
 // They must be initialized at the time of declaration, and accessing them before declaration results in a ReferenceError.
 // Once a value is assigned to a const variable, it cannot be reassigned. Attempting to reassign a const variable throws an error.
 // However, if a const variable holds an object or an array, the properties or elements of the object or array can be modified.
-
 
 // console.log(d); // Error: Cannot access 'd' before initialization
 const d = 10;
@@ -58,16 +56,11 @@ console.log(obj.x); // Output: 2
 
 // obj = { y: 3 }; // Error: Assignment to constant variable
 
-
-
-
-
-
 // EXPLORING BASIC ARITHMETIC
 
 // Addition
 let sum = 1 + 1;
-console.log(sum)
+console.log(sum);
 
 // Subtraction
 let difference = 10 - 5;
@@ -118,11 +111,7 @@ console.log(cohortArray);
 console.log(cohortArray[2]);
 
 // RECTANGLE
-let length = Number (
-    prompt("Let's make a rectangle! Please input the length.")
-  );
-let width = Number (
-    prompt("Now, please input the width!")
-  );
+let length = Number(prompt("Let's make a rectangle! Please input the length."));
+let width = Number(prompt("Now, please input the width!"));
 let area = length * width;
 alert("Good job! The area of our lovely rectangle is: " + area);

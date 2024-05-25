@@ -40,14 +40,13 @@ let userExamScore = prompt("Hi there! Please enter your exam score.");
 
 let scoreLetter =
   userExamScore >= 90
-  ? "an A"
-  : userExamScore >= 80
-  ? "a B"
-  : userExamScore >= 70
-  ? "a C"
-  : userExamScore >= 60
-  ? "a D"
-  : "an F";
+    ? "an A"
+    : userExamScore >= 80
+    ? "a B"
+    : userExamScore >= 70
+    ? "a C"
+    : userExamScore >= 60
+    ? "a D"
+    : "an F";
 
 alert(`You got ${scoreLetter}! Well done (or not)!`);
-

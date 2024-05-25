@@ -10,14 +10,14 @@
 
 // Declare function, takes array as parameter
 function reverseArray(array) {
-// Declare empty array with const
+  // Declare empty array with const
   const reversedArray = [];
-// Use for loop to iterate over initial array in reverse
+  // Use for loop to iterate over initial array in reverse
   for (let i = array.length - 1; i >= 0; i--) {
-// Use push method to append each element at index i to the end of the reversed array
+    // Use push method to append each element at index i to the end of the reversed array
     reversedArray.push(array[i]);
   }
-// Return the reversed array
+  // Return the reversed array
   return reversedArray;
 }
 
@@ -27,4 +27,4 @@ const sampleArray = ["A", "B", "C", "D", "E", "F", "G"];
 // Use console.log to print to the console
 // Use backticks to allow for template literals
 // Call the function using sampleArray as argument
-console.log(reverseArray(sampleArray))
+console.log(reverseArray(sampleArray));

@@ -13,7 +13,7 @@ function sumArray(array) {
   let arraySum = 0;
   // Use a for loop to iterate over array
   for (i = 0; i < array.length; i++) {
-  // Add value of current element to arraySum 
+    // Add value of current element to arraySum
     arraySum += array[i];
   }
   // Return arraySum
@@ -26,4 +26,6 @@ const sampleArray = [1, 4, 76, 983];
 // Use console.log to print to the console
 // Use backticks to allow for template literals
 // Call the sumArray function with sampleArray as argument
-console.log(`The sum of the numbers ${sampleArray} is ${sumArray(sampleArray)}!`);
+console.log(
+  `The sum of the numbers ${sampleArray} is ${sumArray(sampleArray)}!`
+);

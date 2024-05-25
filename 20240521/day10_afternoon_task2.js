@@ -33,10 +33,11 @@ let userAge = prompt("Hello! Please enter your age.");
 
 let ticketPricePrompt =
   userAge <= 12
-  ? ticketPrice = 8
-  : userAge <= 64
-  ? ticketPrice = 12
-  : ticketPrice = 10;
+    ? (ticketPrice = 8)
+    : userAge <= 64
+    ? (ticketPrice = 12)
+    : (ticketPrice = 10);
 
-alert(`You are ${userAge} years old so the ticket price for you is ${ticketPrice} EUR.`)
-
+alert(
+  `You are ${userAge} years old so the ticket price for you is ${ticketPrice} EUR.`
+);

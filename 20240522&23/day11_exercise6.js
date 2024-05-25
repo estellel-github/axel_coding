@@ -24,18 +24,19 @@ function findMax(array) {
 */
 
 function findMax(array) {
-  
-let biggerNum = array[0];
-let i = 1;
-while (i < array.length) {
-  if (array[i] > biggerNum) {
-    biggerNum = array[i];
+  let biggerNum = array[0];
+  let i = 1;
+  while (i < array.length) {
+    if (array[i] > biggerNum) {
+      biggerNum = array[i];
     }
     i++;
   }
-  return biggerNum
+  return biggerNum;
 }
 
-const myNumbers = [1, 45, 3, 75, 230, 3, 2.3]
+const myNumbers = [1, 45, 3, 75, 230, 3, 2.3];
 
-console.log(`The biggest number in the array ${myNumbers} is ${findMax(myNumbers)}`)
+console.log(
+  `The biggest number in the array ${myNumbers} is ${findMax(myNumbers)}`
+);

@@ -14,7 +14,7 @@ class Cart {
     this.items = [];
     this.total = 0;
   }
-  
+
   addItem(item) {
     this.items.push(`\nItem: ${item.name} (${item.price} EUR)`);
     this.total += item.price;
@@ -24,17 +24,17 @@ class Cart {
 
 const currentCart = new Cart();
 const itemsToAdd = [
-  {name: "Baguette", price: 2},
-  {name: "Cheese", price: 3},
-  {name: "Wine", price: 5},
-  {name: "Eclair au café", price: 3},
-  {name: "Croissant", price: 3},
-  {name: "Vodka", price: 20}
-]
+  { name: "Baguette", price: 2 },
+  { name: "Cheese", price: 3 },
+  { name: "Wine", price: 5 },
+  { name: "Eclair au café", price: 3 },
+  { name: "Croissant", price: 3 },
+  { name: "Vodka", price: 20 },
+];
 
 for (const item of itemsToAdd) {
-  currentCart.addItem(item)
+  currentCart.addItem(item);
 }
 
-console.log(`Current cart: ${currentCart.items}`)
-console.log(`Total price: ${currentCart.total} EUR`)
+console.log(`Current cart: ${currentCart.items}`);
+console.log(`Total price: ${currentCart.total} EUR`);

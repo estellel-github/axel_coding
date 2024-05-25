@@ -1,5 +1,5 @@
 class Exam {
-  constructor(score){
+  constructor(score) {
     this.score = score;
     this.grade = this.calculateGrade();
   }
@@ -7,17 +7,13 @@ class Exam {
   calculateGrade() {
     if (this.score >= 90) {
       return "A";
-    }
-    else if (this.score >= 80) {
+    } else if (this.score >= 80) {
       return "B";
-    }
-    else if (this.score >= 70) {
+    } else if (this.score >= 70) {
       return "C";
-    }
-    else if (this.score >= 60) {
+    } else if (this.score >= 60) {
       return "D";
-    }
-    else {
+    } else {
       return "F";
     }
   }
@@ -31,7 +27,7 @@ function getValidScore() {
     if (!isNan(score) && score >= 0 && score <= 100) {
       break;
     }
-    alert("Enter a valid score plz")
+    alert("Enter a valid score plz");
   }
 
   return score;

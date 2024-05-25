@@ -35,13 +35,13 @@ else (celsiusTemp > 25) {
 */
 
 // SMARTER
-let celsiusTemp = (prompt("Please enter the temperature in degrees Celsius."));
+let celsiusTemp = prompt("Please enter the temperature in degrees Celsius.");
 let tempStatus =
   celsiusTemp < 0
-  ? "It's freezing outside!"
-  : celsiusTemp <= 15
-  ? "It's cold outside."
-  : celsiusTemp <= 25
-  ? "It's pleasant outside."
-  : "It's hot outside.";
-alert(tempStatus)
+    ? "It's freezing outside!"
+    : celsiusTemp <= 15
+    ? "It's cold outside."
+    : celsiusTemp <= 25
+    ? "It's pleasant outside."
+    : "It's hot outside.";
+alert(tempStatus);
