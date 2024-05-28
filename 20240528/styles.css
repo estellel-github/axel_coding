@@ -1,0 +1,49 @@
+* {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  margin: 20px;
+}
+
+header {
+  background: rgb(248, 247, 247);
+  padding: 20px;
+}
+
+h1 {
+  font-size: 34px;
+  color: rgb(231, 0, 193);
+}
+
+
+h1,
+.intro,
+img {
+  display: block;
+  text-align: center;
+}
+
+.intro {
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  font-style: italic;
+}
+
+img {
+  width: 50%;
+  margin: auto;
+}
+
+section p {
+  text-align: justify;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
