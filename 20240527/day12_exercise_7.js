@@ -26,7 +26,7 @@ const numbers2 = [4, 8, 15, 16, 23, 42];
 console.log(result); */
 
 const productResult = (numbers) => {
-  return numbers.reduce((sum, current) => sum * current, 1);
+  return numbers.reduce((acc, current) => acc * current, 1);
 }
 
 console.log(productResult(numbers2));

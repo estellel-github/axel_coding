@@ -10,6 +10,6 @@ result to the console. */
 
 const filterEven = (array) => array.filter((number) => number % 2 === 0);
 
-myArray = [23, 90, 340, 25, 678, 9846, 3, 7, 11];
+const myArray = [23, 90, 340, 25, 678, 9846, 3, 7, 11];
 
 console.log(filterEven(myArray));

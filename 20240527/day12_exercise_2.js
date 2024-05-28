@@ -20,7 +20,7 @@ function sum(...numbers) {
 const testArray = [1, 4, 98, 23, 54];
 
 // Need to add ... to the array name as well!!!
-console.log(sum(...testArray))
+console.log(sum(testArray))
 
 // AS ARROW FUNCTION ---------------------------------
 
@@ -32,4 +32,4 @@ const sumArrow = (...numbers) => {
   return totalSum;
 }
 
-console.log(sumArrow(...testArray))
+console.log(sumArrow(1, 4, 98, 23, 54))
