@@ -1,0 +1,1 @@
+return (`Recommended category: ${recommendedCategory2}`);
