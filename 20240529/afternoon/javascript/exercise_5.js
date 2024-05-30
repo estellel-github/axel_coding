@@ -2,22 +2,34 @@
   <button id="checkCountsButton">Get Counts</button>
   <div id="resultBox"></div> */
 
+// Define variables
 const buttonElement = document.getElementById("checkCountsButton");
-const paragraphInput = document.getElementById("paragraphInput")
+const paragraphInput = document.getElementById("paragraphInput");
 const resultBox = document.getElementById('resultBox');
 
+// Set up event listener
 buttonElement.addEventListener('click', function () {
   let paragraph = paragraphInput.value;
   let count = 0;
-  let check = false;
+  let check = false; // boolean
   for (let i = 0; i < paragraph.length; i++) {
+    // Condition 1: Character is not a space and check is false = NEW WORD STARTS, set check to true
     if (paragraph[i] !== " " && !check) {
       count++;
       check = true;
     }
+    // (Condition 3 (implied): Character is not a space and check is true (we are within a word))
+    else if (paragraph[i] !== " " && !check) {
+      check = true;
+    }
+    // Condition 2: Check if character is a space = NOT A WORD, set check to false
     else if (paragraph[i] === " ") {
       check = false;
     }
   }
   resultBox.innerHTML = `Your paragraph contains ${count} words.`;
   })
+
+
+// .split
+// (can use space tab etc.)
