@@ -30,6 +30,7 @@ buttonElement.addEventListener('click', function () {
   resultBox.innerHTML = `Your paragraph contains ${count} words.`;
   })
 
-
-// .split
-// (can use space tab etc.)
+// Working but not taking line breaks into account (only spaces within line)
+// Feedback from Nikki:
+// use .split (can use space tab etc. as separators)
+// >> see exercise_5_simpler.js
