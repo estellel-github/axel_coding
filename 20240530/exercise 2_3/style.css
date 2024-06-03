@@ -2,9 +2,38 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: nowrap;
 }
 
-li {
-  list-style-type: none;
-  margin: 0;
+.left-links {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media only screen and (max-width: 600px) {
+  li {
+    display:list-item;
+    list-style-type: none;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  li {
+    display: inline;
+    list-style-type: none;
+  }
+}
+
+a, a:visited, a:hover {
+  color: rgb(68, 106, 211);
+  text-decoration: none;
+  padding: 5px;
+}
+
+a:hover {
+  background:rgb(224, 233, 255);
+}
+
+img {
+  max-width: 150px;
 }
