@@ -1,6 +1,6 @@
-{/* <button id="incrementButton">Increment</button>
+/* <button id="incrementButton">Increment</button>
 <br>
-<div id="updatedCountDisplay"></div> */}
+<div id="updatedCountDisplay"></div> */
 
 const buttonElement = document.getElementById("incrementButton");
 const displayElement = document.getElementById("updatedCountDisplay");
