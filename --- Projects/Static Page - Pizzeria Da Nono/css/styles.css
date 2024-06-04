@@ -1,0 +1,141 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f3f2f2;
+}
+header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+header,
+footer {
+  background-color: #1d1c1c;
+  color: white;
+  text-align: center;
+  padding: 1em 0;
+}
+
+@media screen and (max-width: 680px) {
+  nav li {
+    display: block;
+    margin: 5px;
+  }
+}
+
+@media screen and (min-width: 680px) {
+  nav li {
+    display: inline;
+  }
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav img {
+  padding: 10px;
+  opacity: 1;
+}
+
+nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+}
+
+nav li {
+  text-decoration: none;
+  list-style: none;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero img {
+  max-width: 100%;
+}
+
+.order-button {
+  background-color: #333;
+  padding: 10px 20px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.order-button:hover {
+  background-color: #555;
+}
+
+.order-button a {
+  text-decoration: none;
+  color: white;
+}
+
+.info {
+  padding: 20px;
+  text-align: center;
+}
+
+.info h2 {
+  margin-top: 0;
+}
+
+h1,
+.welcome {
+  font-size: max(5vw, 3rem);
+  text-shadow: 2px 2px 3px rgba(112, 111, 111, 0.2), 2px 3px 5px rgba(49, 49, 49, 0.397);
+  margin: 10px 0 10px 0;
+  background: white;
+  padding: 5px;
+  text-align: center;
+}
+
+.hero {
+  background-image: url("../images/pizza.png");
+  height: 50vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: center;
+  justify-content: center;
+  align-items: center;
+  color: rgb(0, 0, 0);
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+}
+
+.footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 2em 0;
+  background-color: #1b1b1b;
+  color: white;
+}
+
+.footer-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-icon {
+  width: 30px; /* Adjust size as needed */
+  margin-bottom: 10px;
+}
+
+.footer a {
+  text-decoration: none;
+  color: white;
+}

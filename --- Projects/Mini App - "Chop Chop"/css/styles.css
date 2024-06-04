@@ -1,0 +1,66 @@
+* {
+  border: #490606 1px solid;
+}
+
+body {
+  font-family:'Courier New', Courier, monospace;
+  background: #383838;
+  color: #d8d6d6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+img {
+  max-width: 300px;
+  border-radius: 16px;
+  border:#d8d6d6 2px solid;
+}
+
+.container1, .container2 {
+  background: #313131;
+  width: 75%;
+  margin: auto;
+  padding: 25px;
+  border-radius: 10px;
+}
+
+.container1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.container2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items:flex-start;
+  gap: 16px;
+}
+
+.slogan {
+  font-weight: bold;
+  font-style: italic;
+  font-size: 6vw;
+  text-shadow: 3px 2px 3px #585656;
+}
+
+input, button {
+  padding: 8px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border:#d8d6d6 2px solid;
+}
+
+.todo-symbol::before {
+  content: "❌ ";
+  font-size: 12px;
+}
+
+.done-symbol::before {
+  content: "✅ ";
+  font-size: 12px;
+}
