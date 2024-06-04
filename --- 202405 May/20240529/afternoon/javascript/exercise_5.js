@@ -27,7 +27,7 @@ buttonElement.addEventListener('click', function () {
       check = false;
     }
   }
-  resultBox.innerHTML = `Your paragraph contains ${count} words.`;
+  resultBox.textContent = `Your paragraph contains ${count} words.`;
   })
 
 // Working but not taking line breaks into account (only spaces within line)

@@ -8,8 +8,8 @@ const countDisplayElement = document.getElementById("count-container");
 let counter = 0;
 
 buttonElement.addEventListener('click', function () {
-  counter += 1;
-  countDisplayElement.innerHTML = `Current value: ${counter}`;
+  counter++;
+  countDisplayElement.textContent = `Current value: ${counter}`;
   countDisplayElement.classList.remove("hidden");
 }
 )

@@ -6,11 +6,11 @@
 <button id="submitButton">Submit</button>
 <div id="validationMessageDisplay"></div> */
 
-const userNameElement = document.getElementById("userNameInput");
-const userEmailElement = document.getElementById("userEmailInput");
-const submitElement = document.getElementById("submitButton");
+const userNameElement = document.getElementById("name-input");
+const userEmailElement = document.getElementById("email-input");
+const submitElement = document.getElementById("submit-button");
 const validationMessageElement = document.getElementById(
-  "validationMessageDisplay"
+  "validation-message"
 );
 
 function validateEmail(email) {
@@ -21,9 +21,13 @@ function validateEmail(email) {
 submitElement.addEventListener("click", function () {
   let userName = userNameElement.value;
   let userEmail = userEmailElement.value;
+  let message;
   if (userName !== null && validateEmail(userEmail)) {
-    return `Your information is valid. Thank you!`;
+    message = `Your information is valid. Thank you!`;
   } else {
-    return `Your information is not valid. Please try again.`;
+    message = `Your information is not valid. Please try again`;
   }
+  console.log(message);
+  validationMessageElement.textContent = `${message}`;
 });
+

@@ -8,7 +8,7 @@ function generateRandomQuote() {
 function displayQuote() {
   const quoteElement = document.getElementById("quote");
   const randomQuote = generateRandomQuote();
-  quoteElement.innerHTML = `"${randomQuote.text}"<br>- ${randomQuote.author}`;
+  quoteElement.textContent = `"${randomQuote.text}"\n- ${randomQuote.author}`;
 }
 
 const buttonElement = document.getElementById("generate-button");

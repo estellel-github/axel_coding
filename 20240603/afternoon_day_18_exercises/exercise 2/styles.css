@@ -2,5 +2,14 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  gap: 12px;
 }
 
+.validation-message-red {
+  background: green;
+}
+
+.validation-message-green {
+  background: red;
+}
