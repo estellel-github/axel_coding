@@ -9,22 +9,21 @@
 const userNameElement = document.getElementById("userNameInput");
 const userEmailElement = document.getElementById("userEmailInput");
 const submitElement = document.getElementById("submitButton");
-const validationMessageElement = document.getElementById("validationMessageDisplay");
+const validationMessageElement = document.getElementById(
+  "validationMessageDisplay"
+);
 
 function validateEmail(email) {
   let pattern = /\S+@\S+\.\S+/;
   return pattern.test(email);
 }
 
-submitElement.addEventListener('click', function () {
+submitElement.addEventListener("click", function () {
   let userName = userNameElement.value;
   let userEmail = userEmailElement.value;
   if (userName !== null && validateEmail(userEmail)) {
-    console.log(`Your information is valid. Thank you!`)
+    return `Your information is valid. Thank you!`;
+  } else {
+    return `Your information is not valid. Please try again.`;
   }
-  else {
-  console.log(`Your information is not valid. Please try again.`)
-}
-}
-)
-
+});

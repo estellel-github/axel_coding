@@ -4,12 +4,21 @@ body {
   align-items: center;
 }
 
-#incrementButton {
+#increment-button {
   font-size: 56px;
   box-shadow: 5px 5px 5px #c5c5c5;
 }
 
-#updatedCountDisplay {
+.hidden {
+  visibility: hidden;
+}
+
+#count-container {
   font-family:'Courier New', Courier, monospace;
   font-size: 56px;
+  background: black;
+  color: #01bd1a;
+  padding: 5px;
+  border-radius: 5px;
+  border: #575757 3px solid;
 }
