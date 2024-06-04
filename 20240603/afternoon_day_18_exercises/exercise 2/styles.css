@@ -2,14 +2,25 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   gap: 12px;
 }
 
-.validation-message-red {
-  background: green;
+.validation-message {
+  padding: 10px;
+  border: #a5a3a3 1px solid;
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px #777777;
 }
 
 .validation-message-green {
-  background: red;
+  background: rgba(0, 128, 0, 0.452);
+}
+
+.validation-message-red {
+  background: rgba(255, 0, 0, 0.281);
+}
+
+form * {
+  margin: 5px;
 }

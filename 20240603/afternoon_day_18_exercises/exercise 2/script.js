@@ -6,13 +6,13 @@
 <button id="submitButton">Submit</button>
 <div id="validationMessageDisplay"></div> */
 
+//Define all variables
 const userNameElement = document.getElementById("name-input");
 const userEmailElement = document.getElementById("email-input");
 const submitElement = document.getElementById("submit-button");
-const validationMessageElement = document.getElementById(
-  "validation-message"
-);
+const validationMessageElement = document.getElementById("validation-message");
 
+// Returns true or false if email matches regex pattern
 function validateEmail(email) {
   let pattern = /\S+@\S+\.\S+/;
   return pattern.test(email);
@@ -22,12 +22,20 @@ submitElement.addEventListener("click", function () {
   let userName = userNameElement.value;
   let userEmail = userEmailElement.value;
   let message;
+  // Reset class to prevent accumulation of classes/unexpected scenarios after loop
+  validationMessageElement.className = "";
   if (userName !== null && validateEmail(userEmail)) {
-    message = `Your information is valid. Thank you!`;
+    validationMessageElement.textContent = `Your information is valid. Thank you! 👍`;
+    validationMessageElement.classList.add(
+      "validation-message",
+      "validation-message-green"
+    );
   } else {
-    message = `Your information is not valid. Please try again`;
+    validationMessageElement.textContent = `Your information is not valid. Please try again ⚠️`;
+    validationMessageElement.classList.add(
+      "validation-message",
+      "validation-message-red"
+    );
   }
   console.log(message);
-  validationMessageElement.textContent = `${message}`;
 });
-

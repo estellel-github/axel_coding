@@ -22,11 +22,17 @@ are invalid.
 <body>
   <h1>I'm a form! Fill me!</h1>
   <div>Please enter your information below.</div>
-  <div >Name:</div>
-  <input id="name-input" default="Name">
-  <div>Email:</div>
-  <input id="email-input" default="Email">
-  <button id="submit-button">Submit</button>
+
+  <form>
+    <label for="name-input">Name:</label><br>
+    <input type="text" id="name-input" default="Name"><br>
+    <label for="email-input">Email:</label><br>
+    <input type="text" id="email-input" default="Email"><br>
+    <input type="button" id="submit-button" value="Submit">
+  </form>
+
   <div id="validation-message"></div>
+
 </body>
+
 </html>
