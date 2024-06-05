@@ -4,11 +4,6 @@ body {
   padding: 0;
   background: #f3f2f2;
 }
-header {
-  position: sticky;
-  top: 0;
-  z-index: 999;
-}
 
 header,
 footer {
@@ -18,27 +13,85 @@ footer {
   padding: 1em 0;
 }
 
-@media screen and (max-width: 680px) {
+.header-right.visible {
+  display: flex;
+}
+
+@media screen and (min-width: 540px) {
+  .menu-toggle {
+    display: none;
+  }
   nav li {
-    display: block;
-    margin: 5px;
+    display: inline;
+    margin: 1px;
+  }
+  .footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2em 0;
+    background-color: #1b1b1b;
+    color: white;
+  }
+  .header-right {
+    display: flex;
+  }
+  .menu-toggle {
+    display: none;
+  }
+  .menu-toggle-closed {
+    display: none;
+  }
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 999;
   }
 }
 
-@media screen and (min-width: 680px) {
-  nav li {
-    display: inline;
+@media screen and (max-width: 540px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
+  nav ul {
+    margin: 5px;
+    padding: 0px;
+  }
+  .menu-toggle {
+    display: flex;
+  }
+  .footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2em 0;
+    background-color: #1b1b1b;
+    color: white;
+  }
+  .header-right {
+    display: none;
+    flex-direction: column;
+  }
+}
+
+.header-left img {
+  margin-left: 5px;
+  width: 30px;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
 }
 
 nav {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
 
 nav img {
-  padding: 10px;
   opacity: 1;
 }
 
@@ -52,6 +105,7 @@ nav li {
   text-decoration: none;
   list-style: none;
 }
+
 
 .hero {
   display: flex;
@@ -83,6 +137,10 @@ nav li {
   color: white;
 }
 
+.order-button a:hover {
+  text-decoration: none;
+}
+
 .info {
   padding: 20px;
   text-align: center;
@@ -102,6 +160,11 @@ h1,
   text-align: center;
 }
 
+h1 {
+  border-radius: 5px;
+  border: #333 5px solid;
+}
+
 .hero {
   background-image: url("../images/pizza.png");
   height: 50vh;
@@ -113,15 +176,6 @@ h1,
   align-items: center;
   color: rgb(0, 0, 0);
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
-}
-
-.footer {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 2em 0;
-  background-color: #1b1b1b;
-  color: white;
 }
 
 .footer-section {
@@ -138,4 +192,12 @@ h1,
 .footer a {
   text-decoration: none;
   color: white;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.footer img {
+  border-radius: 30%;
 }
