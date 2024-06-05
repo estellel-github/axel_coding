@@ -17,7 +17,10 @@ footer {
   display: flex;
 }
 
-@media screen and (min-width: 540px) {
+@media screen and (min-width: 600px) {
+  h1, .welcome {
+  font-size: max(2vw, 3rem);
+  }
   .menu-toggle {
     display: none;
   }
@@ -27,9 +30,10 @@ footer {
   }
   .footer {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    padding: 2em 0;
+    gap: 20px;
+    padding: 1em 0;
     background-color: #1b1b1b;
     color: white;
   }
@@ -49,7 +53,10 @@ footer {
   }
 }
 
-@media screen and (max-width: 540px) {
+@media screen and (max-width: 600px) {
+  h1, .welcome {
+    font-size: max(2vw, 2.2rem);
+    }
   nav {
     flex-direction: column;
     align-items: center;
@@ -58,6 +65,9 @@ footer {
   nav ul {
     margin: 5px;
     padding: 0px;
+  }
+  nav ul li {
+    padding: 3px;
   }
   .menu-toggle {
     display: flex;
@@ -106,13 +116,6 @@ nav li {
   list-style: none;
 }
 
-
-.hero {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 .hero img {
   max-width: 100%;
 }
@@ -152,7 +155,6 @@ nav li {
 
 h1,
 .welcome {
-  font-size: max(5vw, 3rem);
   text-shadow: 2px 2px 3px rgba(112, 111, 111, 0.2), 2px 3px 5px rgba(49, 49, 49, 0.397);
   margin: 10px 0 10px 0;
   background: white;
@@ -166,6 +168,9 @@ h1 {
 }
 
 .hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-image: url("../images/pizza.png");
   height: 50vh;
   background-size: cover;
@@ -200,4 +205,264 @@ a:hover {
 
 .footer img {
   border-radius: 30%;
+}
+
+main.menu {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.menu-category {
+  margin-bottom: 20px;
+}
+
+.menu-item {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.menu-item:last-child {
+  border-bottom: none;
+}
+
+.item-name {
+  font-weight: bold;
+  font-size: 1.2em;
+  margin-bottom: 5px;
+}
+
+.item-ingredients {
+  font-size: 0.9em;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+.item-info {
+  font-size: 0.8em;
+  color: #888;
+  margin-bottom: 5px;
+}
+
+.item-price {
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.top-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url("../images/pizza.png");
+  height: 25vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: center;
+  justify-content: center;
+  align-items: center;
+  color: rgb(0, 0, 0);
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+  border-bottom: #333 5px solid;
+}
+
+.gallery {
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.gallery div {
+  width: 150px;
+  height: 150px;
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+  border-radius: 8px;
+  background: #333;
+  padding: 5px;
+  border: #8b8b8b 1px solid;
+}
+
+.gallery img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: auto;
+  height: 100%;
+  transform: translate(-50%, -50%);
+}
+
+/* Ensure portrait images cover the entire thumbnail area */
+.gallery img.portrait {
+  width: 100%;
+  height: auto;
+}
+
+/* Media Queries for smaller screens */
+@media screen and (max-width: 540px) {
+  .gallery {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 5px;
+  }
+
+  .gallery div {
+    width: 100px;
+    height: 100px;
+  }
+
+  .gallery img {
+    width: auto;
+    height: 100%;
+  }
+}
+
+.about {
+  padding: 20px;
+  max-width: 800px;
+  margin: auto;
+}
+
+.about-content p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+  font-size: 1.1em;
+}
+
+.contact {
+  padding: 20px;
+  max-width: 800px;
+  margin: auto;
+}
+
+.contact-content p {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1em;
+}
+
+button[type="submit"] {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 1em;
+  cursor: pointer;
+  align-self: center;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+.order {
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto 0 auto;
+}
+
+.order-category {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.order-grid h2 {
+  text-align: center;
+}
+
+.order-item {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: 300px;
+  width: 250px;
+}
+
+.order-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.item-name {
+  font-size: 1.2em;
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+.item-ingredients {
+  font-size: 0.9em;
+  color: #666;
+  margin: 5px 0;
+}
+
+.item-info {
+  font-size: 0.9em;
+  color: #999;
+  margin: 5px 0;
+}
+
+.item-price {
+  font-size: 1.1em;
+  margin: 10px 0;
+  color: #333;
+}
+
+.add-to-cart {
+  background-color: #ff6600;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1.2em;
+  cursor: pointer;
+  margin: 10px 0;
+}
+
+.add-to-cart:hover {
+  background-color: #ff4500;
 }

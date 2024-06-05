@@ -19,8 +19,8 @@
       </div>
       <div class="header-right">
         <div class="logo">
-            <img src="images/pizza-logo-black.png" alt="A logo of a pizza with salami, olives and bell peppers"
-              width="50px">
+          <img src="images/pizza-logo-black.png" alt="A logo of a pizza with salami, olives and bell peppers"
+            width="50px">
         </div>
         <ul>
           <li><a href="index.html">Home</a></li>
@@ -34,17 +34,36 @@
     </nav>
   </header>
 
-  <section class="hero">
+  <section class="top-section">
     <h1>Pizzeria Da Nono</h1>
-    <button class="order-button" onclick=""><a href="order.html">Order Now</a></button>
+    <h1>Contact Us</h1>
   </section>
 
-  <main class="info">
-    <h2>Our Location</h2>
-    <p>Zionskirchstr., 10119 Berlin</p>
-    <h2>Opening Hours</h2>
-    <p>Monday - Friday: 11:00 AM - 10:00 PM</p>
-    <p>Saturday - Sunday: 12:00 PM - 11:00 PM</p>
+  <main class="contact">
+    <section class="contact-content">
+      <p>
+        We'd love to hear from you! Whether you have a question about our menu, want to make a reservation, or just want to share your experience, please feel free to reach out. Fill out the form below, and we will get back to you as soon as possible.
+      </p>
+      <form class="contact-form" action="#" method="post">
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="subject">Subject:</label>
+          <input type="text" id="subject" name="subject" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
   </main>
 
   <footer class="footer">
