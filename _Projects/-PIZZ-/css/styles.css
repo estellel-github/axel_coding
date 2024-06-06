@@ -490,7 +490,18 @@ main {
 }
 
 @media screen and (max-width: 600px) {
-.top-container {
+.about-container {
   flex-direction: column;
 }
+}
+
+.contact-content {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 50%;
+}
+
+textarea {
+  resize: vertical;
 }
