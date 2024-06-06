@@ -18,6 +18,13 @@ footer {
   display: flex;
 }
 
+.menu-toggle-img {
+  border-radius: 30%;
+  width: 30px;
+  opacity: 0.9;
+  background: transparent;
+}
+
 @media screen and (min-width: 600px) {
   h1, .welcome {
   font-size: max(2vw, 3rem);
@@ -485,6 +492,11 @@ main {
 
 .about-img {
   max-width: 300px;
+  border-radius: 5px;
+  border: #333 1px solid;
+}
+
+button {
   border-radius: 5px;
   border: #333 1px solid;
 }
