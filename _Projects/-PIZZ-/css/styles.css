@@ -522,3 +522,8 @@ textarea {
   text-decoration: underline;
   font-weight: bold;
 }
+
+.form-error {
+  color: red;
+  font-weight: bold;
+}

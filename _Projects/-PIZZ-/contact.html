@@ -47,25 +47,26 @@
       <form class="contact-form" id="contact-form" action="#" method="post">
         <div class="form-group">
           <label for="name">Name:</label>
-          <input type="text" id="form-name-input" name="name" required>
-          <div class="error" id="name-error"></div>
+          <input type="text" id="form-name-input" name="name">
+          <div class="form-error" id="name-error"></div>
         </div>
         <div class="form-group">
           <label for="email">Email:</label>
-          <input type="email" id="form-email-input" name="email" required>
-          <div class="error" id="email-error"></div>
+          <input type="email" id="form-email-input" name="email">
+          <div class="form-error" id="email-error"></div>
         </div>
         <div class="form-group">
           <label for="subject">Subject:</label>
-          <input type="text" id="form-subject-input" name="subject" required>
-          <div class="error" id="subject-error"></div>
+          <input type="text" id="form-subject-input" name="subject">
+          <div class="form-error" id="subject-error"></div>
         </div>
         <div class="form-group">
           <label for="message">Message:</label>
-          <textarea id="message" name="form-message-input" rows="5" required></textarea>
-          <div class="error" id="message-error"></div>
+          <textarea id="message" name="form-message-input" rows="5"></textarea>
+          <div class="form-error" id="message-error"></div>
         </div>
-        <button type="form-submit-button">Send Message</button>
+        <button class="form-submit-button" id="form-submit" type="submit">Send Message</button>
+        <div class="" id="form-success"></div>
       </form>
     </section>
   </main>
