@@ -505,3 +505,8 @@ main {
 textarea {
   resize: vertical;
 }
+
+[aria-current="page"] {
+  text-decoration: underline;
+  font-weight: bold;
+}
