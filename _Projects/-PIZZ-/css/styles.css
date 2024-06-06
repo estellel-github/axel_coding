@@ -2,6 +2,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
   background: #f3f2f2;
 }
 
@@ -281,6 +282,7 @@ main.menu {
 }
 
 .gallery div {
+  margin:auto;
   width: 150px;
   height: 150px;
   display: inline-block;
@@ -439,6 +441,7 @@ main {
   font-size: 0.9em;
   color: #666;
   margin: 5px 0;
+  padding: 5px;
 }
 
 .item-info {
@@ -466,4 +469,28 @@ main {
 
 .add-to-cart:hover {
   background-color: #ff4500;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.about-img {
+  max-width: 300px;
+  border-radius: 5px;
+  border: #333 1px solid;
+}
+
+@media screen and (max-width: 600px) {
+.top-container {
+  flex-direction: column;
+}
 }
