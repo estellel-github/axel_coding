@@ -11,170 +11,172 @@
 </head>
 
 <body>
-
-  <header>
-    <nav>
-      <div class="header-left">
-        <div class="menu-toggle" onclick="toggleMenu()"><input type="image" id="menu-button-img" class="menu-toggle-img" src="images/menu_lines.png" alt="Button to select to open/close collapsible menu"></div>
+<div class="main-container">
+  
+    <header>
+      <nav>
+        <div class="header-left">
+          <div class="menu-toggle" onclick="toggleMenu()"><input type="image" id="menu-button-img" class="menu-toggle-img" src="images/menu_lines.png" alt="Button to select to open/close collapsible menu"></div>
+        </div>
+        <div class="header-right">
+          <div class="logo">
+            <img src="images/pizza-logo-black.png" alt="A logo showing a pizza slice"
+              width="50px">
+          </div>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="order.html" aria-current="page">Order</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+  
+    <section class="top-section">
+      <h1>Pizzeria Da Nono</h1>
+      <h1>Place Your Order!</h1>
+    </section>
+  
+    <main class="order">
+      <div class="order-grid">
+        <h2>Pizza</h2>
+        <div class="order-category">
+          <div class="order-item">
+            <img src="images/order/margherita.jpg" alt="Margherita Pizza">
+            <div class="item-name">Margherita</div>
+            <div class="item-ingredients">Tomato, Mozzarella, Basil</div>
+            <div class="item-info">Vegetarian</div>
+            <div class="item-price">€8.00</div>
+            <button class="add-to-cart">+</button>
+          </div>
+          <div class="order-item">
+            <img src="images/order/marinara.jpg" alt="Marinara Pizza">
+            <div class="item-name">Marinara</div>
+            <div class="item-ingredients">Tomato, Garlic, Oregano</div>
+            <div class="item-info">Vegan</div>
+            <div class="item-price">€7.50</div>
+            <button class="add-to-cart">+</button>
+          </div>
+          <div class="order-item">
+            <img src="images/order/quattro_stagioni.jpg" alt="Quattro Stagioni Pizza">
+            <div class="item-name">Quattro Stagioni</div>
+            <div class="item-ingredients">Tomato, Mozzarella, Artichokes, Ham, Mushrooms, Olives</div>
+            <div class="item-info"></div>
+            <div class="item-price">€10.50</div>
+            <button class="add-to-cart">+</button>
+          </div>
+          <div class="order-item">
+            <img src="images/order/pepperoni.jpg" alt="Pepperoni Pizza">
+            <div class="item-name">Pepperoni</div>
+            <div class="item-ingredients">Tomato, Mozzarella, Pepperoni</div>
+            <div class="item-info"></div>
+            <div class="item-price">€9.50</div>
+            <button class="add-to-cart">+</button>
+          </div>
+          <div class="order-item">
+            <img src="images/order/vegetarian.jpg" alt="Vegetarian Pizza">
+            <div class="item-name">Vegetarian</div>
+            <div class="item-ingredients">Tomato, Mozzarella, Bell Peppers, Onions, Olives</div>
+            <div class="item-info">Vegetarian</div>
+            <div class="item-price">€9.00</div>
+            <button class="add-to-cart">+</button>
+          </div>
+          <div class="order-item">
+            <img src="images/order/hawaiian.jpg" alt="Hawaiian Pizza">
+            <div class="item-name">Hawaiian</div>
+            <div class="item-ingredients">Tomato, Mozzarella, Ham, Pineapple</div>
+            <div class="item-info"></div>
+            <div class="item-price">€9.50</div>
+            <button class="add-to-cart">+</button>
+          </div>
+          <div class="order-item">
+            <img src="images/order/diavola.jpg" alt="Diavola Pizza">
+            <div class="item-name">Diavola</div>
+            <div class="item-ingredients">Tomato, Mozzarella, Spicy Salami</div>
+            <div class="item-info"></div>
+            <div class="item-price">€10.00</div>
+            <button class="add-to-cart">+</button>
+          </div>
+          <div class="order-item">
+            <img src="images/order/quattro_formaggi.jpg" alt="Four Cheese Pizza">
+            <div class="item-name">Four Cheese</div>
+            <div class="item-ingredients">Mozzarella, Gorgonzola, Parmesan, Goat Cheese</div>
+            <div class="item-info">Vegetarian</div>
+            <div class="item-price">€11.00</div>
+            <button class="add-to-cart">+</button>
+          </div>
+        </div>
+        <h2>Pasta</h2>
+        <div class="order-category">
+          <div class="order-item">
+            <img src="images/order/carbonara.jpg" alt="Spaghetti Carbonara">
+            <div class="item-name">Spaghetti Carbonara</div>
+            <div class="item-ingredients">Eggs, Pecorino Cheese, Guanciale, Black Pepper</div>
+            <div class="item-info"></div>
+            <div class="item-price">€11.00</div>
+            <button class="add-to-cart">+</button>
+          </div>
+          <div class="order-item">
+            <img src="images/order/lasagna.jpg" alt="Lasagna">
+            <div class="item-name">Lasagna</div>
+            <div class="item-ingredients">Layers of Pasta, Bolognese Sauce, Béchamel, Parmesan</div>
+            <div class="item-info"></div>
+            <div class="item-price">€12.00</div>
+            <button class="add-to-cart">+</button>
+          </div>
+          <div class="order-item">
+            <img src="images/order/ravioli.jpg" alt="Ravioli">
+            <div class="item-name">Ravioli</div>
+            <div class="item-ingredients">Stuffed Pasta with Ricotta and Spinach</div>
+            <div class="item-info">Vegetarian</div>
+            <div class="item-price">€11.50</div>
+            <button class="add-to-cart">+</button>
+          </div>
+        </div>
+        <h2>Salads</h2>
+        <div class="order-category">
+          <div class="order-item">
+            <img src="images/order/caesar.jpg" alt="Caesar Salad">
+            <div class="item-name">Caesar Salad</div>
+            <div class="item-ingredients">Romaine Lettuce, Croutons, Parmesan, Caesar Dressing</div>
+            <div class="item-info"></div>
+            <div class="item-price">€7.50</div>
+            <button class="add-to-cart">+</button>
+          </div>
+          <div class="order-item">
+            <img src="images/order/caprese.jpg" alt="Caprese Salad">
+            <div class="item-name">Caprese Salad</div>
+            <div class="item-ingredients">Tomatoes, Mozzarella, Basil, Olive Oil</div>
+            <div class="item-info">Vegetarian</div>
+            <div class="item-price">€8.00</div>
+            <button class="add-to-cart">+</button>
+          </div>
+        </div>
       </div>
-      <div class="header-right">
-        <div class="logo">
-          <img src="images/pizza-logo-black.png" alt="A logo showing a pizza slice"
-            width="50px">
-        </div>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="menu.html">Menu</a></li>
-          <li><a href="order.html" aria-current="page">Order</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
-        </ul>
-      </div>
-    </nav>
-  </header>
-
-  <section class="top-section">
-    <h1>Pizzeria Da Nono</h1>
-    <h1>Place Your Order!</h1>
-  </section>
-
-  <main class="order">
-    <div class="order-grid">
-      <h2>Pizza</h2>
-      <div class="order-category">
-        <div class="order-item">
-          <img src="images/order/margherita.jpg" alt="Margherita Pizza">
-          <div class="item-name">Margherita</div>
-          <div class="item-ingredients">Tomato, Mozzarella, Basil</div>
-          <div class="item-info">Vegetarian</div>
-          <div class="item-price">€8.00</div>
-          <button class="add-to-cart">+</button>
-        </div>
-        <div class="order-item">
-          <img src="images/order/marinara.jpg" alt="Marinara Pizza">
-          <div class="item-name">Marinara</div>
-          <div class="item-ingredients">Tomato, Garlic, Oregano</div>
-          <div class="item-info">Vegan</div>
-          <div class="item-price">€7.50</div>
-          <button class="add-to-cart">+</button>
-        </div>
-        <div class="order-item">
-          <img src="images/order/quattro_stagioni.jpg" alt="Quattro Stagioni Pizza">
-          <div class="item-name">Quattro Stagioni</div>
-          <div class="item-ingredients">Tomato, Mozzarella, Artichokes, Ham, Mushrooms, Olives</div>
-          <div class="item-info"></div>
-          <div class="item-price">€10.50</div>
-          <button class="add-to-cart">+</button>
-        </div>
-        <div class="order-item">
-          <img src="images/order/pepperoni.jpg" alt="Pepperoni Pizza">
-          <div class="item-name">Pepperoni</div>
-          <div class="item-ingredients">Tomato, Mozzarella, Pepperoni</div>
-          <div class="item-info"></div>
-          <div class="item-price">€9.50</div>
-          <button class="add-to-cart">+</button>
-        </div>
-        <div class="order-item">
-          <img src="images/order/vegetarian.jpg" alt="Vegetarian Pizza">
-          <div class="item-name">Vegetarian</div>
-          <div class="item-ingredients">Tomato, Mozzarella, Bell Peppers, Onions, Olives</div>
-          <div class="item-info">Vegetarian</div>
-          <div class="item-price">€9.00</div>
-          <button class="add-to-cart">+</button>
-        </div>
-        <div class="order-item">
-          <img src="images/order/hawaiian.jpg" alt="Hawaiian Pizza">
-          <div class="item-name">Hawaiian</div>
-          <div class="item-ingredients">Tomato, Mozzarella, Ham, Pineapple</div>
-          <div class="item-info"></div>
-          <div class="item-price">€9.50</div>
-          <button class="add-to-cart">+</button>
-        </div>
-        <div class="order-item">
-          <img src="images/order/diavola.jpg" alt="Diavola Pizza">
-          <div class="item-name">Diavola</div>
-          <div class="item-ingredients">Tomato, Mozzarella, Spicy Salami</div>
-          <div class="item-info"></div>
-          <div class="item-price">€10.00</div>
-          <button class="add-to-cart">+</button>
-        </div>
-        <div class="order-item">
-          <img src="images/order/quattro_formaggi.jpg" alt="Four Cheese Pizza">
-          <div class="item-name">Four Cheese</div>
-          <div class="item-ingredients">Mozzarella, Gorgonzola, Parmesan, Goat Cheese</div>
-          <div class="item-info">Vegetarian</div>
-          <div class="item-price">€11.00</div>
-          <button class="add-to-cart">+</button>
-        </div>
-      </div>
-      <h2>Pasta</h2>
-      <div class="order-category">
-        <div class="order-item">
-          <img src="images/order/carbonara.jpg" alt="Spaghetti Carbonara">
-          <div class="item-name">Spaghetti Carbonara</div>
-          <div class="item-ingredients">Eggs, Pecorino Cheese, Guanciale, Black Pepper</div>
-          <div class="item-info"></div>
-          <div class="item-price">€11.00</div>
-          <button class="add-to-cart">+</button>
-        </div>
-        <div class="order-item">
-          <img src="images/order/lasagna.jpg" alt="Lasagna">
-          <div class="item-name">Lasagna</div>
-          <div class="item-ingredients">Layers of Pasta, Bolognese Sauce, Béchamel, Parmesan</div>
-          <div class="item-info"></div>
-          <div class="item-price">€12.00</div>
-          <button class="add-to-cart">+</button>
-        </div>
-        <div class="order-item">
-          <img src="images/order/ravioli.jpg" alt="Ravioli">
-          <div class="item-name">Ravioli</div>
-          <div class="item-ingredients">Stuffed Pasta with Ricotta and Spinach</div>
-          <div class="item-info">Vegetarian</div>
-          <div class="item-price">€11.50</div>
-          <button class="add-to-cart">+</button>
-        </div>
-      </div>
-      <h2>Salads</h2>
-      <div class="order-category">
-        <div class="order-item">
-          <img src="images/order/caesar.jpg" alt="Caesar Salad">
-          <div class="item-name">Caesar Salad</div>
-          <div class="item-ingredients">Romaine Lettuce, Croutons, Parmesan, Caesar Dressing</div>
-          <div class="item-info"></div>
-          <div class="item-price">€7.50</div>
-          <button class="add-to-cart">+</button>
-        </div>
-        <div class="order-item">
-          <img src="images/order/caprese.jpg" alt="Caprese Salad">
-          <div class="item-name">Caprese Salad</div>
-          <div class="item-ingredients">Tomatoes, Mozzarella, Basil, Olive Oil</div>
-          <div class="item-info">Vegetarian</div>
-          <div class="item-price">€8.00</div>
-          <button class="add-to-cart">+</button>
-        </div>
-      </div>
+    </main>
+  
+  <footer class="footer">
+    <div class="footer-section">
+      <img src="images/phone-icon.png" alt="Phone Icon" class="footer-icon">
+      <p><a href="#phone">+49 123 456-7890</a></p>
     </div>
-  </main>
-
-<footer class="footer">
-  <div class="footer-section">
-    <img src="images/phone-icon.png" alt="Phone Icon" class="footer-icon">
-    <p><a href="#phone">+49 123 456-7890</a></p>
-  </div>
-  <div class="footer-section">
-    <img src="images/email-icon.png" alt="Email Icon" class="footer-icon">
-    <p><a href="#email">info@danono.com</a></p>
-  </div>
-  <div class="footer-section">
-    <img src="images/facebook-icon.png" alt="Facebook Icon" class="footer-icon">
-    <p><a href="#facebook">Facebook</a></p>
-  </div>
-  <div class="footer-section">
-    <img src="images/instagram-icon.png" alt="Instagram Icon" class="footer-icon">
-    <p><a href="#instagram">Instagram</a></p>
-  </div>
-</footer>
+    <div class="footer-section">
+      <img src="images/email-icon.png" alt="Email Icon" class="footer-icon">
+      <p><a href="#email">info@danono.com</a></p>
+    </div>
+    <div class="footer-section">
+      <img src="images/facebook-icon.png" alt="Facebook Icon" class="footer-icon">
+      <p><a href="#facebook">Facebook</a></p>
+    </div>
+    <div class="footer-section">
+      <img src="images/instagram-icon.png" alt="Instagram Icon" class="footer-icon">
+      <p><a href="#instagram">Instagram</a></p>
+    </div>
+  </footer>
+</div>
 
 </body>
 
