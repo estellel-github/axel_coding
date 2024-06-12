@@ -3,8 +3,8 @@
   <div id="resultBox"></div> */
 
 // Define variables
-const buttonElement = document.getElementById("checkCountsButton");
-const paragraphInput = document.getElementById("paragraphInput");
+const buttonElement = document.querySelector("#checkCountsButton");
+const paragraphInput = document.querySelector("#paragraphInput");
 const resultBox = document.getElementById('resultBox');
 
 // Set up event listener

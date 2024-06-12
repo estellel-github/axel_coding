@@ -7,10 +7,10 @@
 <div id="validationMessageDisplay"></div> */
 
 //Define all variables
-const userNameElement = document.getElementById("name-input");
-const userEmailElement = document.getElementById("email-input");
-const submitElement = document.getElementById("submit-button");
-const validationMessageElement = document.getElementById("validation-message");
+const userNameElement = document.querySelector("#name-input");
+const userEmailElement = document.querySelector("#email-input");
+const submitElement = document.querySelector("#submit-button");
+const validationMessageElement = document.querySelector("#validation-message");
 
 // Returns true or false if email matches regex pattern
 function validateEmail(email) {

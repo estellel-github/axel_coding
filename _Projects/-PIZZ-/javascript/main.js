@@ -2,7 +2,7 @@ function toggleMenu() {
   const menu = document.querySelector(".header-right");
   menu.classList.toggle("visible");
 
-  const menuButton = document.getElementById("menu-button-img");
+  const menuButton = document.querySelector("#menu-button-img");
 
   if (menu.classList.contains("visible")) {
     menuButton.src = "images/menu_close.png";
@@ -31,7 +31,7 @@ function toggleMenu() {
 <button type="form-submit-button">Send Message</button>
 </form> */
 
-const form = document.getElementById("contact-form");
+const form = document.querySelector("#contact-form");
 const nameField = form.elements["form-name-input"];
 const emailField = form.elements["form-email-input"];
 const subjectField = form.elements["form-subject-input"];
@@ -42,39 +42,39 @@ form.addEventListener("submit", (event) => {
   event.preventDefault();
 
   // Clear previous errors
-  document.getElementById("name-error").textContent = "";
-  document.getElementById("email-error").textContent = "";
-  document.getElementById("subject-error").textContent = "";
-  document.getElementById("message-error").textContent = "";
+  document.querySelector("#name-error").textContent = "";
+  document.querySelector("#email-error").textContent = "";
+  document.querySelector("#subject-error").textContent = "";
+  document.querySelector("#message-error").textContent = "";
 
   // Validation flags
   let isValid = true;
 
   // Validate all fields
   if (nameField.value === "") {
-    document.getElementById("name-error").textContent =
+    document.querySelector("#name-error").textContent =
       "⚠️ This field is required!";
       isValid = false;
   }
   if (emailField.value === "") {
-    document.getElementById("email-error").textContent =
+    document.querySelector("#email-error").textContent =
       "⚠️ This field is required!";
       isValid = false;
   }
   if (subjectField.value === "") {
-    document.getElementById("subject-error").textContent =
+    document.querySelector("#subject-error").textContent =
       "⚠️ This field is required!";
       isValid = false;
   }
   if (messageField.value === "") {
-    document.getElementById("message-error").textContent =
+    document.querySelector("#message-error").textContent =
       "⚠️ This field is required!";
       isValid = false;
   }
   // If form is valid, submit the form
   if (isValid) {
     form.submit();
-    document.getElementById("form-success").textContent = "Thank you for your message! We'll get back to you as soon as possible.";
+    document.querySelector("#form-success").textContent = "Thank you for your message! We'll get back to you as soon as possible.";
   }
 
 });

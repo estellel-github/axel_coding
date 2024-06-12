@@ -6,12 +6,12 @@ function generateRandomQuote() {
 }
 
 function displayQuote() {
-  const quoteElement = document.getElementById("quote");
+  const quoteElement = document.querySelector("#quote");
   const randomQuote = generateRandomQuote();
   quoteElement.textContent = `"${randomQuote.text}"\n- ${randomQuote.author}`;
 }
 
-const buttonElement = document.getElementById("generate-button");
+const buttonElement = document.querySelector("#generate-button");
 buttonElement.addEventListener("click", displayQuote);
 
 const dogQuotes = [

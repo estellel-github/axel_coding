@@ -2,8 +2,8 @@
 <br>
 <div id="updatedCountDisplay"></div> */
 
-const buttonElement = document.getElementById("increment-button");
-const countDisplayElement = document.getElementById("count-container");
+const buttonElement = document.querySelector("#increment-button");
+const countDisplayElement = document.querySelector("#count-container");
 
 let counter = 0;
 

@@ -1,6 +1,6 @@
-const buttonElement = document.getElementById("calculateSumButton");
-const num1Element = document.getElementById("num1Input");
-const num2Element = document.getElementById("num2Input");
+const buttonElement = document.querySelector("#calculateSumButton");
+const num1Element = document.querySelector("#num1Input");
+const num2Element = document.querySelector("#num2Input");
 const resultBox = document.getElementById('resultBox');
 
 buttonElement.addEventListener('click', function () {
