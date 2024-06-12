@@ -54,11 +54,11 @@
       "🗽 New York",
     ];
 
-    const cityList = document.getElementById("city-list");
-    const message = document.getElementById("message-box");
-    const addButton = document.getElementById("add-button");
-    const cityInput = document.getElementById("city-input");
-    const positionInput = document.getElementById("position-input");
+    const cityList = document.querySelector("#city-list");
+    const message = document.querySelector("#message-box");
+    const addButton = document.querySelector("#add-button");
+    const cityInput = document.querySelector("#city-input");
+    const positionInput = document.querySelector("#position-input");
 
     function clearCityList() {
       cityList.textContent = "";
@@ -96,7 +96,7 @@
       // Get position input
       const position = positionInput.value;
       // Clear name input
-      document.getElementById("city-input").value = "";
+      document.querySelector("#city-input").value = "";
 
       addToArray(cities, cityName, position);
     });

@@ -30,10 +30,10 @@
       "New York",
     ];
 
-    const cityList = document.getElementById("city-list");
-    const message = document.getElementById("message-box");
-    const addButton = document.getElementById("add-button");
-    const deleteButton = document.getElementById("delete-button");
+    const cityList = document.querySelector("#city-list");
+    const message = document.querySelector("#message-box");
+    const addButton = document.querySelector("#add-button");
+    const deleteButton = document.querySelector("#delete-button");
 
     function clearCityList() {
       cityList.textContent = "";
@@ -82,9 +82,9 @@
       // Clear message box
       message.textContent = "";
       // Get name input
-      const cityName = document.getElementById("city-name-input").value;
+      const cityName = document.querySelector("#city-name-input").value;
       // Clear name input
-      document.getElementById("city-name-input").value = "";
+      document.querySelector("#city-name-input").value = "";
 
       addToArray(cities, cityName);
     });
@@ -93,9 +93,9 @@
       // Clear message box
       message.textContent = "";
       // Get name input
-      const cityName = document.getElementById("city-name-input").value;
+      const cityName = document.querySelector("#city-name-input").value;
       // Clear name input
-      document.getElementById("city-name-input").value = "";
+      document.querySelector("#city-name-input").value = "";
 
       if (cityName === "") {
         message.textContent = "Please enter a name to delete!";

@@ -11,10 +11,10 @@ const students = [
   "Zana",
 ];
 
-const studentList = document.getElementById("student-list");
-const message = document.getElementById("message-box");
-const addButton = document.getElementById("add-button");
-const deleteButton = document.getElementById("delete-button");
+const studentList = document.querySelector("#student-list");
+const message = document.querySelector("#message-box");
+const addButton = document.querySelector("#add-button");
+const deleteButton = document.querySelector("#delete-button");
 
 function clearStudentList() {
   studentList.textContent = "";
@@ -73,9 +73,9 @@ addButton.addEventListener("click", () => {
   // Clear message box
   message.textContent = "";
   // Get name input
-  const studentName = document.getElementById("student-name-input").value;
+  const studentName = document.querySelector("#student-name-input").value;
   // Clear name input
-  document.getElementById("student-name-input").value = "";
+  document.querySelector("#student-name-input").value = "";
 
   addToArray(students, studentName);
 });
@@ -86,9 +86,9 @@ deleteButton.addEventListener("click", () => {
   // Clear message box
   message.textContent = "";
   // Get name input
-  const studentName = document.getElementById("student-name-input").value;
+  const studentName = document.querySelector("#student-name-input").value;
   // Clear name input
-  document.getElementById("student-name-input").value = "";
+  document.querySelector("#student-name-input").value = "";
 
   if (studentName === "") {
     displayMessage("Please enter a name to delete!", "red");

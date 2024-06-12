@@ -22,10 +22,10 @@
     // 1. Create an array with the names of three colors.
     // 2. Create a function, displayColors(), to display the array in the list on the webpage.
     // 3. Use JavaScript to add the value from the input field to the array and display the updated array in the list.
-    const colorInput = document.getElementById("color-input");
-    const addColorButton = document.getElementById("add-color-button");
-    const colorList = document.getElementById("color-list");
-    const message = document.getElementById("message-box");
+    const colorInput = document.querySelector("#color-input");
+    const addColorButton = document.querySelector("#add-color-button");
+    const colorList = document.querySelector("#color-list");
+    const message = document.querySelector("#message-box");
 
     colorArray = ["bleu", "blanc", "rouge"];
 
@@ -61,9 +61,9 @@
       // Clear message box
       message.textContent = "";
       // Get color input
-      const colorInput = document.getElementById("color-input").value;
+      const colorInput = document.querySelector("##color-input").value;
       // Clear color input
-      document.getElementById("color-input").value = "";
+      document.querySelector("##color-input").value = "";
 
       addToArray(colorArray, colorInput);
     });

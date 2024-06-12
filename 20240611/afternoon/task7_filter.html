@@ -14,6 +14,7 @@
        1. A dropdown (select) element for different genres (id="genreSelect")
        2. A ul element -->
   <select name="genres" id="genres">
+    <option value="...">Filter...</option>
     <option value="Sci-Fi">Sci-Fi</option>
     <option value="Thriller">Thriller</option>
     <option value="Psychological Thriller">Psychological Thriller</option>
@@ -38,8 +39,8 @@
     // Step 1: Create an array of movie objects, each with a title and genre.
     // Example: { title: 'The Shawshank Redemption', genre: 'Drama' }
 
-    const selectElement = document.getElementById("genres");
-    const movieList = document.getElementById("movie-list");
+    const selectElement = document.querySelector("#genres");
+    const movieList = document.querySelector("#movie-list");
 
     const movies = [
       { title: "Inception", genre: "Sci-Fi" },
