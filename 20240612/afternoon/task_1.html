@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Student Information</title>
+</head>
+
+<body>
+
+  <h1>Student Information</h1>
+  <div id="student-info"></div>
+
+  <script>
+
+/* 1. Create an object representing a student with properties: name, surname, hobby,
+and hasPet.
+2. Display the student's information in a paragraph on the webpage. */
+
+    // Task 1 JavaScript code goes here
+    const student = {
+      name: "Josie",
+      surname: "Grant",
+      hobby: "Reading",
+      hasPet: true,
+      }
+    
+    const studentInfo = document.querySelector("#student-info");
+    
+    const studentInfoContainer = document.createElement("div");
+
+    const nameElement = document.createElement("p");
+    nameElement.textContent = `Name: ${student.name}`
+    studentInfoContainer.appendChild(nameElement);
+
+    const surnameElement = document.createElement("p");
+    surnameElement.textContent = `Surname: ${student.surname}`
+    studentInfoContainer.appendChild(surnameElement);
+
+    const hobbyElement = document.createElement("p");
+    hobbyElement.textContent = `Hobby: ${student.hobby}`
+    studentInfoContainer.appendChild(hobbyElement);
+
+    const hasPetElement = document.createElement("p");
+    let hasPetString = (student.hasPet === true) ? "Yes" : "No";
+    hasPetElement.textContent = `Has pets: ${hasPetString}`
+    studentInfoContainer.appendChild(hasPetElement);
+
+    studentInfo.appendChild(studentInfoContainer);
+
+  </script>
+
+</body>
+
+</html>

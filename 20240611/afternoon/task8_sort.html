@@ -1,19 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Task 7: Sports List</title>
 </head>
+
 <body>
   <h1>Sports List</h1>
-  
+
   <!-- Task 4 HTML goes here
        Add:
        1. A button (id="sortAscButton") with text "Sort Ascending".
        2. A button (id="sortDescButton") with text "Sort Descending".
        3. An unordered list (id="sportsList"). -->
-       
-  
+  <div>
+    <img src="https://www.spectator.co.uk/wp-content/uploads/2023/12/GettyImages-1610636434-e1701777275507.jpg?w=720"
+      width="150px">
+  </div>
+  <button id="sort-asc-button">Sort - Ascending</button>
+  <button id="sort-desc-button">Sort - Descending</button>
+  <ul id="sports-list"></ul>
+
+
   <script>
     // Task 4 JavaScript code goes here
     // Step 1: Create an array with the names of eight sports.
@@ -24,7 +33,47 @@
     // Step 6: Add event listeners to the buttons to sort the array and update the list when clicked.
     // Step 7: Initial display of sports.
 
-   
+    const sportsArray = [
+      "Archery",
+      "Basketball",
+      "Gymnastics",
+      "Swimming",
+      "Track and Field",
+      "Soccer",
+      "Tennis",
+      "Volleyball"
+    ];
+
+    const sortAscElement = document.querySelector("#sort-asc-button");
+    const sortDescElement = document.querySelector("#sort-desc-button");
+    const sportsList = document.querySelector("#sports-list");
+
+    function displaySports() {
+      sportsList.textContent = "";
+      sportsArray.forEach((sport) => {
+        const listItem = document.createElement("li");
+        listItem.textContent = sport;
+        sportsList.appendChild(listItem);
+      })
+    }
+
+    displaySports();
+
+    function sortSportsAscending() {
+      sportsArray.sort();
+      displaySports();
+    }
+
+    sortAscElement.addEventListener("click", sortSportsAscending);
+
+    function sortSportsDescending() {
+      sportsArray.sort().reverse();
+      displaySports();
+    }
+
+    sortDescElement.addEventListener("click", sortSportsDescending);
+
   </script>
 </body>
+
 </html>

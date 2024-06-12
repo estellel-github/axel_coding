@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Classmates Information</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+    }
+
+    #pet-filter-select {
+      display: block;
+      margin: 20px auto;
+      padding: 10px;
+      font-size: 16px;
+    }
+
+    #famous-students-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      list-style-type: none;
+      padding: 0;
+    }
+
+    #famous-students-list div {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      transition: transform 0.2s;
+    }
+
+    /*     #famous-students-list div:hover {
+      transform: scale(1.05);
+    }
+ */
+
+    #famous-students-list p {
+      margin: 10px 0;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Famous Students Information</h1>
+
+  <select name="has-pet-or-not" id="pet-filter-select">
+    <option value="All students">All students</option>
+    <option value="Students with pets">Students with pets 🐱</option>
+    <option value="Students without pets">Students without pets 😔</option>
+  </select>
+
+  <ul id="famous-students-list"></ul>
+
+  <script>
+    const famousStudents = [
+      {
+        name: "Scout",
+        surname: "Finch",
+        school: "Maycomb Elementary School",
+        yearInSchool: 1933,
+        hasPet: true,
+      },
+      {
+        name: "Holden",
+        surname: "Caulfield",
+        school: "Pencey Prep",
+        yearInSchool: 1948,
+        hasPet: true,
+      },
+      {
+        name: "Anne",
+        surname: "Shirley",
+        school: "Avonlea School",
+        yearInSchool: 1876,
+        hasPet: true,
+      },
+      {
+        name: "Tom",
+        surname: "Sawyer",
+        school: "St. Petersburg School",
+        yearInSchool: 1876,
+        hasPet: false,
+      },
+      {
+        name: "Matilda",
+        surname: "Wormwood",
+        school: "Crunchem Hall Primary School",
+        yearInSchool: 1988,
+        hasPet: false,
+      }
+    ];
+
+    const famousStudentsList = document.querySelector("#famous-students-list");
+    const petFilterElement = document.querySelector("#pet-filter-select");
+
+    function clearStudentsList() {
+      famousStudentsList.textContent = "";
+    }
+
+    function displayStudentsList(students) {
+      clearStudentsList();
+
+      students.forEach((student) => {
+        const studentInfoContainer = document.createElement("div");
+
+        const nameElement = document.createElement("p");
+        nameElement.textContent = `Name: ${student.name}`;
+        studentInfoContainer.appendChild(nameElement);
+
+        const surnameElement = document.createElement("p");
+        surnameElement.textContent = `Surname: ${student.surname}`;
+        studentInfoContainer.appendChild(surnameElement);
+
+        const schoolElement = document.createElement("p");
+        schoolElement.textContent = `School: ${student.school}`;
+        studentInfoContainer.appendChild(schoolElement);
+
+        const yearElement = document.createElement("p");
+        yearElement.textContent = `Year in School: ${student.yearInSchool}`;
+        studentInfoContainer.appendChild(yearElement);
+
+        const hasPetElement = document.createElement("p");
+        let hasPetString = (student.hasPet === true) ? "Yes" : "No";
+        hasPetElement.textContent = `Has pets: ${hasPetString}`;
+        studentInfoContainer.appendChild(hasPetElement);
+
+        famousStudentsList.appendChild(studentInfoContainer);
+
+      });
+    }
+
+    displayStudentsList(famousStudents);
+
+    function filterStudentList(students) {
+      const selectedFilter = petFilterElement.value;
+      if (selectedFilter === "All students") {
+        displayStudentsList(students);
+      }
+      else if (selectedFilter === "Students with pets") {
+        displayStudentsList(students.filter(student => student.hasPet === true));
+      }
+      else if (selectedFilter === "Students without pets") {
+        displayStudentsList(students.filter(student => student.hasPet === false));
+      }
+    }
+
+    petFilterElement.addEventListener("change", () => {
+      filterStudentList(famousStudents);
+    }
+    )
+
+  </script>
+</body>
+
+</html>

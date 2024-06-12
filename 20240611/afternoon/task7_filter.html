@@ -14,7 +14,7 @@
        1. A dropdown (select) element for different genres (id="genreSelect")
        2. A ul element -->
   <select name="genres" id="genres">
-    <option value="...">Filter...</option>
+    <option value="All genres">All genres</option>
     <option value="Sci-Fi">Sci-Fi</option>
     <option value="Thriller">Thriller</option>
     <option value="Psychological Thriller">Psychological Thriller</option>
@@ -64,17 +64,21 @@
       });
     }
 
-      selectElement.addEventListener("change", () => {
-        const selectedGenre = selectElement.value;
+    selectElement.addEventListener("change", () => {
+      const selectedGenre = selectElement.value;
+      if (selectedGenre === "All genres") {
+        displayMovies(movies);
+      }
+      else {
         const filteredMovies = movies.filter(movie => movie.genre === selectedGenre);
         displayMovies(filteredMovies);
-      
-  }
-  )
+      }
+    }
+    )
 
-  displayMovies(movies);
+    displayMovies(movies);
 
-    
+
   </script>
 </body>
 

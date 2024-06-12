@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Classmates Information</title>
+</head>
+
+<body>
+
+  <!-- Objective: Create an array of student objects and display their information in a list on
+the webpage.
+Instructions:
+1. Create an array with at least 5 student objects.
+2. Display each student's information in an unordered list (<ul>). -->
+
+  <h1>Famous Students Information</h1>
+
+  <select name="has-pet-or-not" id="has-pet-filter">
+    <option value="Has pet">Has pet 🐱</option>
+    <option value="Doesn't have pet">Doesn't have pet 😔</option>
+  </select>
+
+  <ul id="famous-students-list"></ul>
+
+
+  <script>
+
+
+    // Task 2 JavaScript code goes here
+
+    const famousStudents = [
+      {
+        name: "Scout",
+        surname: "Finch",
+        school: "Maycomb Elementary School",
+        yearInSchool: 1933,
+        hasPet: true,
+      },
+      {
+        name: "Holden",
+        surname: "Caulfield",
+        school: "Pencey Prep",
+        yearInSchool: 1948,
+        hasPet: true,
+      },
+      {
+        name: "Anne",
+        surname: "Shirley",
+        school: "Avonlea School",
+        yearInSchool: 1876,
+        hasPet: true,
+      },
+      {
+        name: "Tom",
+        surname: "Sawyer",
+        school: "St. Petersburg School",
+        yearInSchool: 1876,
+        hasPet: false,
+      },
+      {
+        name: "Matilda",
+        surname: "Wormwood",
+        school: "Crunchem Hall Primary School",
+        yearInSchool: 1988,
+        hasPet: false,
+      }
+    ];
+
+    const famousStudentsList = document.querySelector("#famous-students-list");
+
+    function displayStudentsList() {
+      famousStudents.forEach((student) => {
+
+        const studentInfoContainer = document.createElement("div");
+
+        const nameElement = document.createElement("p");
+        nameElement.textContent = `Name: ${student.name}`
+        studentInfoContainer.appendChild(nameElement);
+
+        const surnameElement = document.createElement("p");
+        surnameElement.textContent = `Surname: ${student.surname}`
+        studentInfoContainer.appendChild(surnameElement);
+
+        const schoolElement = document.createElement("p");
+        schoolElement.textContent = `Hobby: ${student.school}`
+        studentInfoContainer.appendChild(schoolElement);
+
+        const hasPetElement = document.createElement("p");
+        let hasPetString = (student.hasPet === true) ? "Yes" : "No";
+        hasPetElement.textContent = `Has pets: ${hasPetString}`
+        studentInfoContainer.appendChild(hasPetElement);
+
+        famousStudentsList.appendChild(studentInfoContainer);
+      })
+    }
+
+    displayStudentsList();
+
+
+
+    
+    
+
+  </script>
+</body>
+
+</html>
