@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>City List</title>
+</head>
+
+<body>
+  <h1>City List</h1>
+  <ul id="city-list"></ul>
+  <input type="text" id="city-name-input" placeholder="Enter city name">
+  <div class="button-container">
+    <button id="add-button" class="btn">Add city</button>
+    <button id="delete-button" class="btn">Delete city</button>
+  </div>
+  <div id="message-box" class="msg-box"></div>
+
+
+  <script>
+    // Task 1 JavaScript code goes here
+    // 1. Create an array with the names of four cities.
+    // 2. Add an input field and a button to the HTML.
+    // 3. Use JavaScript to remove the specified city from the array and update the list.
+
+    const cities = [
+      "Paris",
+      "Berlin",
+      "Barcelona",
+      "New York",
+    ];
+
+    const cityList = document.getElementById("city-list");
+    const message = document.getElementById("message-box");
+    const addButton = document.getElementById("add-button");
+    const deleteButton = document.getElementById("delete-button");
+
+    function clearCityList() {
+      cityList.textContent = "";
+    }
+
+    function updateCityList() {
+      clearCityList();
+      cities.forEach((city) => {
+        const listItem = document.createElement("li");
+        listItem.textContent = city;
+        cityList.appendChild(listItem);
+      });
+    }
+
+    // Display initial list when opening page
+    updateCityList();
+
+    function addToArray(array, item) {
+      if (array.includes(item)) {
+        message.textContent = `${item} could not be added as they are already in the list!`;
+      } else if (item === "") {
+        message.textContent = "Please enter a name to add!";
+      } else {
+        array.push(item);
+        message.textContent = `${item} was successfully added to the list!`;
+        updateCityList();
+      }
+    }
+
+    function removeFromArray(array, item) {
+      if (!array.includes(item)) {
+        message.textContent = `${item} could not be removed as they are not in the list!`;
+      }
+      let i = 0;
+      while (i < array.length) {
+        if (item === array[i]) {
+          array.splice(i, 1);
+          message.textContent = `${item} was successfully removed from the list!`;
+        } else {
+          i++;
+        }
+      }
+    }
+
+    addButton.addEventListener("click", () => {
+      // Clear message box
+      message.textContent = "";
+      // Get name input
+      const cityName = document.getElementById("city-name-input").value;
+      // Clear name input
+      document.getElementById("city-name-input").value = "";
+
+      addToArray(cities, cityName);
+    });
+
+    deleteButton.addEventListener("click", () => {
+      // Clear message box
+      message.textContent = "";
+      // Get name input
+      const cityName = document.getElementById("city-name-input").value;
+      // Clear name input
+      document.getElementById("city-name-input").value = "";
+
+      if (cityName === "") {
+        message.textContent = "Please enter a name to delete!";
+      } else {
+        removeFromArray(cities, cityName);
+        updateCityList();
+      }
+    });
+
+  </script>
+</body>
+
+</html>

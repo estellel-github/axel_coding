@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Task 5: Cities List</title>
+  <style>
+    ul,
+    #message-box {
+      font-size: 30px;
+    }
+
+    li {
+      list-style-type: none;
+    }
+
+    input,
+    button {
+      font-size: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Cities List</h1>
+
+  <!-- Task 2 HTML goes here
+       Add:
+       1. an input field (id="cityInput") with placeholder "Enter a city",
+       2. an input field (id="positionInput") with placeholder "Enter position (1-based)" and type="number" and min="1",
+       3. a button (id="addCityButton") with text "Add City",
+       4. an unordered list (id="cityList") -->
+
+  <input id="city-input" type="text" placeholder="Enter a city name">
+  <input id="position-input" type="number" min="1" placeholder="Enter the position">
+  <button id="add-button">Add city</button>
+  <ul id="city-list"></ul>
+  <div id="message-box"></div>
+
+
+  <script>
+    // Task 2 JavaScript code goes here
+    // Step 1: Create an array with the names of three cities.
+    // Step 2: Get the input fields, button, and <ul> element by their IDs.
+    // Step 3: Create a function to display the cities in the list.
+    // Step 4: Create a function to add a city to the array at a specific position.
+    // Step 5: Add an event listener to the button to add the city and update the list when clicked.
+    // Step 6: Initial display of cities.
+
+    const cities = [
+      "🥐 Paris",
+      "🌭 Berlin",
+      "💃 Barcelona",
+      "🗽 New York",
+    ];
+
+    const cityList = document.getElementById("city-list");
+    const message = document.getElementById("message-box");
+    const addButton = document.getElementById("add-button");
+    const cityInput = document.getElementById("city-input");
+    const positionInput = document.getElementById("position-input");
+
+    function clearCityList() {
+      cityList.textContent = "";
+    }
+
+    function updateCityList() {
+      clearCityList();
+      cities.forEach((city) => {
+        const listItem = document.createElement("li");
+        listItem.textContent = city;
+        cityList.appendChild(listItem);
+      });
+    }
+
+    // Display initial list when opening page
+    updateCityList();
+
+    function addToArray(array, city, position) {
+      if (array.includes(city)) {
+        message.textContent = `${city} could not be added as they are already in the list!`;
+      } else if (city === "") {
+        message.textContent = "Please enter a name to add!";
+      } else {
+        array.splice(position - 1, 0, city);
+        message.textContent = `${city} was successfully added to the list!`;
+        updateCityList();
+      }
+    }
+
+    addButton.addEventListener("click", () => {
+      // Clear message box
+      message.textContent = "";
+      // Get name input
+      const cityName = cityInput.value;
+      // Get position input
+      const position = positionInput.value;
+      // Clear name input
+      document.getElementById("city-input").value = "";
+
+      addToArray(cities, cityName, position);
+    });
+
+  </script>
+</body>
+
+</html>

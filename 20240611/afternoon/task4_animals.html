@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Animals List</title>
+  <style>
+    ul {
+      font-size: 30px;
+    }
+    li {
+      list-style-type: none;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Animals List</h1>
+  <!--  Task 3 HTML goes here
+        Add:
+        1. a button (id=removeAnimalButton),
+        2. an unordered list (no need to add listitems)(id=”animalList). -->
+
+  <button id="remove-animal-button">Remove animal</button>
+  <ul id="animal-list"></ul>
+
+  <script>
+    // Task 3 JavaScript code goes here
+    // 1. Create an array with the names of four animals.
+    // 2. Use JavaScript to remove the last animal and update the list.
+
+    const removeAnimalButton = document.getElementById("remove-animal-button");
+    const animalList = document.getElementById("animal-list");
+
+    animalArray = [
+      "🐸",
+      "🐻",
+      "🐶",
+      "🐱",
+      "🐔"
+    ];
+
+    function displayAnimals() {
+      animalList.textContent = "";
+      animalArray.forEach((animal) => {
+        const listItem = document.createElement("li");
+        listItem.textContent = animal;
+        animalList.appendChild(listItem);
+      })
+    }
+
+    displayAnimals();
+
+    removeAnimalButton.addEventListener("click", () => {
+      animalArray.pop();
+      displayAnimals();
+    }
+    )
+
+  </script>
+
+</body>
+
+</html>

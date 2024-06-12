@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Task 6: Movies List</title>
+</head>
+
+<body>
+  <h1>Movies List</h1>
+
+  <!-- Task 3 HTML goes here
+       Add:
+       1. A dropdown (select) element for different genres (id="genreSelect")
+       2. A ul element -->
+  <select name="genres" id="genres">
+    <option value="Sci-Fi">Sci-Fi</option>
+    <option value="Thriller">Thriller</option>
+    <option value="Psychological Thriller">Psychological Thriller</option>
+    <option value="Romantic Drama">Romantic Drama</option>
+    <option value="Mystery/Thriller">Mystery/Thriller</option>
+    <option value="Mystery/Drama">Mystery/Drama</option>
+    <option value="Drama">Drama</option>
+    <option value="Supernatural Thriller">Supernatural Thriller</option>
+  </select>
+  <ul id="movie-list"></ul>
+
+
+  <script>
+    // Task 3 JavaScript code goes here
+    // Step 1: Create an array of movie objects, each with a title and genre. At least 10 movies.
+    // Step 2: Get the dropdown and <ul> element by their IDs.
+    // Step 3: Create a function to display the movies in the list.
+    // Step 4: Create a function to check if a movie's genre matches the selected genre.
+    // Step 5: Add an event listener to the dropdown to filter and display movies when changed.
+    // Step 6: Initial display of all movies.
+
+    // Step 1: Create an array of movie objects, each with a title and genre.
+    // Example: { title: 'The Shawshank Redemption', genre: 'Drama' }
+
+    const selectElement = document.getElementById("genres");
+    const movieList = document.getElementById("movie-list");
+
+    const movies = [
+      { title: "Inception", genre: "Sci-Fi" },
+      { title: "Memento", genre: "Thriller" },
+      { title: "Donnie Darko", genre: "Psychological Thriller" },
+      { title: "Eternal Sunshine of the Spotless Mind", genre: "Romantic Drama" },
+      { title: "The Matrix", genre: "Sci-Fi" },
+      { title: "Shutter Island", genre: "Mystery/Thriller" },
+      { title: "Mulholland Drive", genre: "Mystery/Drama" },
+      { title: "Fight Club", genre: "Drama" },
+      { title: "The Sixth Sense", genre: "Supernatural Thriller" },
+      { title: "Primer", genre: "Sci-Fi" }
+    ];
+
+    function displayMovies(moviesToDisplay) {
+      movieList.textContent = "";
+      moviesToDisplay.forEach((movie) => {
+        const listItem = document.createElement("li");
+        listItem.textContent = movie.title;
+        movieList.appendChild(listItem);
+      });
+    }
+
+      selectElement.addEventListener("change", () => {
+        const selectedGenre = selectElement.value;
+        const filteredMovies = movies.filter(movie => movie.genre === selectedGenre);
+        displayMovies(filteredMovies);
+      
+  }
+  )
+
+  displayMovies(movies);
+
+    
+  </script>
+</body>
+
+</html>

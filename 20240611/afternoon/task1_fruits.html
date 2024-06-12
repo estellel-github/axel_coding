@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Task1: Fruits List</title>
+  <script defer src="javascript/task1_fruits.js"></script>
+</head>
+
+<body>
+  <h1>Fruits List</h1>
+  <ul id="fruit-list"></ul>
+
+  <script>
+    // Task 1 JavaScript code goes here
+    // 1. Create an array with the names of five fruits.
+    // 2. Use JavaScript to display each fruit in an unordered list (<ul>) on a webpage.
+    const fruitList = document.getElementById("fruit-list");
+
+    const fruits = [
+      "Guava",
+      "Mango",
+      "Dragonfruit",
+      "Jackfruit",
+      "Goji",
+      "Litchi",
+      "Passionfruit",
+      "Quince",
+      "Mangosteen",
+      "Star fruit",
+    ];
+
+    const fruitListItems = fruits.map(function (fruit) {
+      return "<li>" + fruit + "</li>";
+    }).join("");
+
+    fruitList.innerHTML = fruitListItems;
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Task 2: Colors List</title>
+</head>
+
+<body>
+  <h1>Colors List</h1>
+  <!--  Task 2 HTML goes here
+        Add:
+        1. an input field (id=”colorInput”),
+        2. a button (id=”addColorButton”) 
+        3. an unordered list -->
+  <input id="color-input" type="text" placeholder="Enter a color" />
+  <button id="add-color-button">Add color</button>
+  <ul id="color-list"></ul>
+  <div id="message-box"></div>
+  <script>
+    // Task 2 JavaScript code goes here
+    // 1. Create an array with the names of three colors.
+    // 2. Create a function, displayColors(), to display the array in the list on the webpage.
+    // 3. Use JavaScript to add the value from the input field to the array and display the updated array in the list.
+    const colorInput = document.getElementById("color-input");
+    const addColorButton = document.getElementById("add-color-button");
+    const colorList = document.getElementById("color-list");
+    const message = document.getElementById("message-box");
+
+    colorArray = ["bleu", "blanc", "rouge"];
+
+    function clearColorList() {
+      colorList.textContent = "";
+    }
+
+    function displayColors() {
+      clearColorList();
+      colorArray.forEach((color) => {
+        const listItem = document.createElement("li");
+        listItem.textContent = color;
+        colorList.appendChild(listItem);
+      })
+    }
+
+    // Display initial list when opening page
+    displayColors();
+
+    function addToArray(array, color) {
+      if (array.includes(color)) {
+        message.textContent = `${color} is already in the list!`;
+      } else if (color === "") {
+        message.textContent = `Please enter a color to add!`;
+      } else {
+        array.push(color);
+        message.textContent = `${color}: successfully added to the list!`;
+        displayColors();
+      }
+    }
+
+    addColorButton.addEventListener("click", () => {
+      // Clear message box
+      message.textContent = "";
+      // Get color input
+      const colorInput = document.getElementById("color-input").value;
+      // Clear color input
+      document.getElementById("color-input").value = "";
+
+      addToArray(colorArray, colorInput);
+    });
+
+  </script>
+</body>
+
+</html>

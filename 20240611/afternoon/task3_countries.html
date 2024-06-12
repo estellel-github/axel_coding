@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Countries List</title>
+</head>
+
+<body>
+  <h1>Countries List</h1>
+
+  <!--  Task 4 HTML goes here
+        Add:
+        1. an unordered list (no need to add listitems)(id="countryList"),
+        2. a paragraph (id="countrycount") -->
+
+  <ul id="country-list"></ul>
+  <p id="country-count"></p>
+
+  <script>
+    // Task 4 JavaScript code goes here
+    // 1. Create an array with the names of five countries.
+    // 2. Display the names of the countries in an unordered list.
+    // 3. Display the number of countries in a paragraph.
+
+    const countryList = document.getElementById("country-list");
+    const countryCount = document.getElementById("country-count");
+
+    countryArray = [
+      "Tuvalu",
+      "Kiribati",
+      "Comoros",
+      "Djibouti",
+      "Eritrea",
+    ];
+
+    function displayCountries() {
+      countryArray.forEach((country) => {
+        const listItem = document.createElement("li");
+        listItem.textContent = country;
+        countryList.appendChild(listItem);
+      })
+    }
+
+    function displayCountryNames() {
+      countryArray.forEach((country) => {
+        const listItem = document.createElement("li");
+        listItem.textContent = country;
+        countryList.appendChild(listItem);
+      })
+    }
+
+    displayCountryNames();
+
+    function displayCountryCount() {
+      countryCount.textContent = `The list contains ${countryArray.length} countries.`;
+    }
+
+    displayCountryCount();
+
+  </script>
+</body>
+
+</html>
