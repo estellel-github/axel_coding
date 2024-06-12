@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Information</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="main.js"></script>
+</head>
+
+<body>
+  <h1>User Information</h1>
+  <!-- Delete user section -->
+  <input id="user-id-input" type="number" placeholder="Add ID of user to remove">
+  <button id="remove-user-btn">Remove user</button>
+
+  <!-- Add user section -->
+    <label for="user-name">Username</label>
+    <input name="user-name" id="add-user-username" type="text">
+    <label for="first-name">First name</label>
+    <input name="first-name" id="add-user-firstname" type="text">
+    <label for="last-name">Last name</label>
+    <input name="last-name" id="add-user-lastname" type="text">
+    <span id="message" class="hidden"></span>
+    <button id="add-user-btn">Add user</button>
+
+  <!-- User list -->
+  <div id="person-info"></div>
+
+</body>
+
+</html>
