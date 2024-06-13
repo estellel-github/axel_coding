@@ -33,3 +33,9 @@ function addCity() {
     alert("Please enter valid city name and population.");
   }
 }
+
+const addCityButton = document.querySelector("#add-city-button");
+
+addCityButton.addEventListener("click", () => {
+  addCity();
+});
