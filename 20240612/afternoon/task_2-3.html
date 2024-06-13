@@ -13,7 +13,7 @@
       padding: 20px;
     }
 
-    h1 {
+    h1, h2 {
       text-align: center;
       color: #2c3e50;
     }
@@ -50,6 +50,53 @@
     #famous-students-list p {
       margin: 10px 0;
     }
+
+    /* Add styles for the form */
+    form {
+      max-width: 400px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    form label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    form input[type="text"],
+    form input[type="checkbox"] {
+      width: calc(100% - 20px);
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    form input[type="checkbox"] {
+      width: auto;
+    }
+
+    form button {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      background-color: #2c3e50;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    form button:hover {
+      background-color: #1a242f;
+    }
   </style>
 </head>
 
@@ -63,6 +110,21 @@
   </select>
 
   <ul id="famous-students-list"></ul>
+
+  <h2>Add New Student</h2>
+  <form id="add-student-form">
+    <label>Name:<input type="text" id="name-input"></label>
+    <br>
+    <label>Surname:<input type="text" id="surname-input"></label>
+    <br>
+    <label>School:<input type="text" id="school-input"></label>
+    <br>
+    <label>Year in school:<input type="text" id="year-input"></label>
+    <br>
+    <label>Has Pet:<input type="checkbox" id="has-pet-input"></label>
+    <br>
+    <button type="submit">Add Student</button>
+  </form>
 
   <script>
     const famousStudents = [
@@ -161,6 +223,40 @@
       filterStudentList(famousStudents);
     }
     )
+
+  //   <h2>Add New Student</h2>
+  // <form id="add-student-form">
+  //   <label>Name:<input type="text" id="name-input"></label>
+  //   <br>
+  //   <label>Surname:<input type="text" id="surname-input"></label>
+  //   <br>
+  //   <label>Hobby:<input type="text" id="hobby-input"></label>
+  //   <br>
+  //   <label>Has Pet:<input type="checkbox" id="has-pet-input"></label>
+  //   <br>
+  //   <button type="submit">Add Student</button>
+  // </form>
+
+  const addStudentForm = document.querySelector("#add-student-form");
+  const nameInputElement = document.querySelector("#name-input");
+  const surnameInputElement = document.querySelector("#surname-input");
+  const schoolInputElement = document.querySelector("#school-input");
+  const yearInputElement = document.querySelector("#year-input");
+  const hasPetInputElement = document.querySelector("#has-pet-input");
+
+  addStudentForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const newStudent = {
+      name: nameInputElement.value,
+      surname: surnameInputElement.value,
+      school: schoolInputElement.value,
+      yearInSchool: yearInputElement.value,
+      hasPet: hasPetInputElement.checked,
+    }
+    famousStudents.push(newStudent);
+    displayStudentsList(famousStudents);
+    addStudentForm.reset();
+  });
 
   </script>
 </body>
