@@ -1,3 +1,5 @@
+// Exercise 1
+
 const studentGrades = new Map();
 
 studentGrades.set("Roberta", 90);
@@ -25,6 +27,8 @@ function displayGradesList(gradesList, location) {
 
 displayGradesList(studentGrades, gradesListElement);
 
+// Exercise 2
+
 const studentGradesArray = Array.from(studentGrades);
 
 const studentGrades1 = new Map(studentGradesArray.slice(0, 3));
@@ -33,6 +37,8 @@ const studentGrades2 = new Map (studentGradesArray.slice(3));
 displayGradesList(studentGrades1, gradesListGroup1Element);
 
 displayGradesList(studentGrades2, gradesListGroup2Element);
+
+// Exercise 3
 
 const hobbiesArray = ["Reading", "Knitting", "Petting the cat", "Drinking tea", "Drinking tea"];
 
@@ -43,6 +49,8 @@ function displayHobbies() {
 }
 
 displayHobbies();
+
+// Exercise 4
 
 const namesSet1 = new Set(['Chloe', 'Emma', 'Jade', 'Manon', 'Lea']);
 
