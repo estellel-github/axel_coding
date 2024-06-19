@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Stack Implementation</title>
+  <script defer src="javascript/main.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0;
+      padding: 20px;
+      background-color: #f4f4f4;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    .header {
+      color: #333;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .container {
+      display: flex;
+      gap: 20px;
+    }
+
+    img {
+      border-radius: 5px;
+      border: solid 2px rgba(128, 128, 128, 0.411);
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin-right: 10px;
+      width: 200px;
+    }
+
+    .button-container {
+      margin-top: 10px;
+    }
+
+    button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      background-color: #df49d2;
+      color: white;
+      cursor: pointer;
+      margin-right: 5px;
+      font-size: 14px;
+    }
+
+    button:last-child {
+      margin-right: 0;
+    }
+
+    button:hover {
+      background-color: #e87bfd;
+    }
+
+    #stack-list {
+      list-style-type: none;
+      padding: 0;
+      margin-top: 20px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      width: 240px;
+      text-align: left;
+      padding: 10px;
+    }
+
+    #stack-list li {
+      padding: 5px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    #stack-list li:last-child {
+      border-bottom: none;
+    }
+
+    #message {
+      margin-top: 20px;
+      font-weight: bold;
+      color: #d94fd2;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      input[type="text"] {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+
+      .button-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+      }
+
+      button {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+
+      button:last-child {
+        margin-bottom: 0;
+      }
+
+      #stack-list {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Pancake Stack Implementation</h1>
+  <div class="container">
+    <img src="https://www.dessertfortwo.com/wp-content/uploads/2023/08/Pancake-Recipe-14-735x1103.jpg" width="200px">
+    
+    <div class="content">
+      <div class="header">Modify the pancake stack!</div>
+      <div class="button-container">
+        <button onclick="pushElement()">Push</button>
+        <button onclick="popElement()">Pop</button>
+      </div>
+      <br>
+      <div class="header">Current pancake stack:</div>
+      <ul id="stack-list"></ul>
+      <div id="message"></div>
+      <br>
+    </div>
+  </div>
+</body>
+</html>

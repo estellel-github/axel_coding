@@ -30,9 +30,10 @@ displayGradesList(studentGrades, gradesListElement);
 // Exercise 2
 
 const studentGradesArray = Array.from(studentGrades);
+const halfArray = Math.ceil(studentGradesArray.length / 2);
 
-const studentGrades1 = new Map(studentGradesArray.slice(0, 3));
-const studentGrades2 = new Map (studentGradesArray.slice(3));
+const studentGrades1 = new Map(studentGradesArray.slice(0, halfArray));
+const studentGrades2 = new Map (studentGradesArray.slice(halfArray));
 
 displayGradesList(studentGrades1, gradesListGroup1Element);
 
