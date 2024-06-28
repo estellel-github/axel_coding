@@ -1,37 +1,43 @@
 // Recursive
 
-const factorial = (nn) => {
-  if (nn === 0 || nn === 1) {
+const factorial = (n) => {
+  if (n === 0 || n === 1) {
     return 1;
   }
-  if (nn < 0) {
+  if (n < 0) {
     return "Please enter a positive number!";
   }
-  return nn * factorial(nn-1);  
+  return n * factorial(n-1);  
 }
 
 // Memoization (add to array)
 
-const factorialMemo = [];
+const factorialMemoArray = [];
 
-const factorial2 = (nn) => {
-  if (nn === 0 || nn === 1) {
+const factorialMemo = (n) => {
+  if (n === 0 || n === 1) {
     return 1;
   }
-  if (nn < 0) {
+  if (n < 0) {
     return "Please enter a positive number!";
   }
-  if (factorialMemo[nn]) {
-    return factorialMemo[nn];
+  if (factorialMemoArray[n]) {
+    return factorialMemoArray[n];
   }
-  factorialMemo[nn] = nn * factorialMemo[nn-1];
-  return nn * factorial(nn-1);  
+  factorialMemoArray[n] = n * factorialMemo(n-1);
+  return factorialMemoArray[n];  
 }
 
-// Tabulation -- CONTINUE
+// Tabulation
 
-
-
+const factorialTab = (n) => {
+  const factorialTabArray = [1, 1];
+  for (let i = 2; i <= n; i++) {
+    factorialTabArray[i] = i * factorialTabArray[i-1];
+  }
+  return factorialTabArray[n];
+}
 
 console.log(factorial(3));
-console.log(factorial2(3));
+console.log(factorialMemo(3));
+console.log(factorialTab(3));
