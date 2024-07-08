@@ -47,9 +47,11 @@ console.log(add(2,3));
 
 interface Student {
   id: string;
-  name: string;
+  firstName: string;
   age: number;
   email: string;
+  grade?: number;
+  subject?: string;
   graduationYear?: number;
 }
 
@@ -59,24 +61,46 @@ interface GraduateStudent extends Student {
 
 let student1: Student = {
   id: "001",
-  name: "Gloria",
+  firstName: "Gloria",
   age: 83,
   email: "gloria@university.com",
+  grade: 100,
+  subject: "Economics",
 }
 
 let student2: Student = {
   id: "002",
-  name: "Octavia",
+  firstName: "Octavia",
   age: 87,
   email: "octavia@university.com",
+  grade: 95,
+  subject: "Math",
 }
 
 let student3: GraduateStudent = {
   id: "003",
-  name: "Selina",
+  firstName: "Selina",
   age: 65,
   email: "selina@university.com",
+  grade: 90,
+  subject: "Political Science",
   graduationYear: 2023,
 }
 
+let student4: Student = {
+  id: "004",
+  firstName: "Georgia",
+  age: 73,
+  email: "georgia@university.com",
+}
+
+const gradeStudent = (student: Student): string => {
+  if (!student.grade || !student.subject) {
+    return `${student.firstName}'s grade cannot be displayed due to missing data.`
+  }
+  return `${student.firstName} received a grade of ${student.grade} in ${student.subject}.`
+};
+
+console.log(gradeStudent(student3));
+console.log(gradeStudent(student4));
 
