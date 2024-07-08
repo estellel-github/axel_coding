@@ -99,7 +99,7 @@ let student4: Student = {
 }
 
 const gradeStudent = (student: Student): string => {
-  if (!student.grade || !student.subject) {
+  if (!student.grade) {
     return `${student.firstName}'s grade cannot be displayed due to missing data.`
   }
   return `${student.firstName} received a grade of ${student.grade} in ${student.subject}.`
