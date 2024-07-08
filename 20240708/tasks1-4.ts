@@ -12,13 +12,17 @@
 // return `Hello, ${name}!`;
 // }
 
-let message:string = "Hello, world!";
+let message: string = "Hello, world!";
+
+// can also get type by inference:
+// let message = "Hello, world!";
 
 function greet(userName: string): string {
   return `Hello, ${userName}!`;
 }
 
 let myName: string = "Estelle";
+//let myName = "Estelle";
 
 console.log(greet(myName));
 
@@ -32,9 +36,9 @@ console.log(greet(myName));
 
 function add(a: number, b: number): number {
   return a + b;
-  }
+}
 
-console.log(add(2,3));
+console.log(add(2, 3));
 
 // Task 3: Create the Interface Student
 // A.: Create an interface Student in TypeScript with the following properties: id
@@ -103,4 +107,3 @@ const gradeStudent = (student: Student): string => {
 
 console.log(gradeStudent(student3));
 console.log(gradeStudent(student4));
-
