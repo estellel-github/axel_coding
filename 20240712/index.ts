@@ -4,7 +4,7 @@ class Entity {
   private creationDate: Date;
   category: string;
 
-  constructor(title: string, category: string) {
+  constructor(title: string = "N/A", category: string ="N/A") {
     this.title = title;
     this.category = category;
     this.id = Math.floor(Math.random() * 1000)
@@ -32,6 +32,8 @@ let testVar = new Entity("The Castle", "Classic");
 
 const testVar2 = new Entity("The Trial", "Classic")
 
-console.log(testVar.getId());
+const testVar3 = new Entity();
 
 console.log(testVar);
+console.log(testVar2);
+console.log(testVar3);
