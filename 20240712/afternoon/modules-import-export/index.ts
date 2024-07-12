@@ -1,10 +1,19 @@
-import { Task } from "./type";
-import { addTask } from "./todos";
+// INDEX.TS
 
-const tasks: Task[] = [];
+import Todo from "./todos";
 
-addTask("Sleep", tasks);
-addTask("Eat", tasks);
-addTask("Code", tasks);
+const codingCourseTodo = new Todo();
 
-console.log(tasks);
+codingCourseTodo.addTask("Assignment regarding arrays");
+codingCourseTodo.addTask("Work on projects");
+codingCourseTodo.displayTasks();
+
+console.log("Shopping Todos");
+
+const shoppingTodo = new Todo();
+shoppingTodo.addTask("Shop for groceries");
+shoppingTodo.displayTasks();
+
+shoppingTodo.removeTask("Shop for groceries");
+
+shoppingTodo.displayTasks();

@@ -1,3 +1,5 @@
+// TYPE.TS
+
 export enum TaskStatus {
   "To do", //0
   "In progress", //1
