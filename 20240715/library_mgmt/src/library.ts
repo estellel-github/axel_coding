@@ -27,10 +27,16 @@ class Library {
     return this.#books = this.#books.filter(book => book.getTitle !== bookTitle);
   }
 
-  getBooks(): BookDetails[] {
-    return this.#books.map(book => book.getBookDetails());
+  getBooks(): BookDetails[] | string {
+    if (this.#books.length === 0) {
+      return "No books are available currently.";
+    }
+    return (this.#books.map(book => book.getBookDetails()));
   }
 
+  get getName() {
+    return this.#name;
+  }
 }
 
 // TESTS
@@ -44,8 +50,9 @@ library.addBook({ title: 'Sapiens', author: 'Yuval Noah Harari', publishedYear: 
 
 console.log(library.getBooks());
 
-
 library.removeBook('1984');
 
+library.removeBook('Sapiens');
 
-console.log(library.getBooks());
+console.log(`Books available at the ${library.getName}:
+  ${JSON.stringify(library.getBooks())}`);
