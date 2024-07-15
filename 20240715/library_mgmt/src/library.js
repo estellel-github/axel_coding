@@ -12,6 +12,7 @@ var __classPrivateFieldGet = (this && this.__classPrivateFieldGet) || function (
 };
 var _Library_name, _Library_address, _Library_books;
 Object.defineProperty(exports, "__esModule", { value: true });
+const types_1 = require("./types");
 const book_1 = require("./book");
 class Library {
     constructor(libraryDetails) {
@@ -31,14 +32,22 @@ class Library {
         return __classPrivateFieldSet(this, _Library_books, __classPrivateFieldGet(this, _Library_books, "f").filter(book => book.getTitle !== bookTitle), "f");
     }
     getBooks() {
-        return __classPrivateFieldGet(this, _Library_books, "f").map(book => book.getBookDetails());
+        if (__classPrivateFieldGet(this, _Library_books, "f").length === 0) {
+            return "No books are available currently.";
+        }
+        return (__classPrivateFieldGet(this, _Library_books, "f").map(book => book.getBookDetails()));
+    }
+    get getName() {
+        return __classPrivateFieldGet(this, _Library_name, "f");
     }
 }
 _Library_name = new WeakMap(), _Library_address = new WeakMap(), _Library_books = new WeakMap();
 // TESTS
 const library = new Library({ name: 'City Library', address: '123 Main St' });
-library.addBook({ title: '1984', author: 'George Orwell', publishedYear: 1949, genre: 'Fiction' });
-library.addBook({ title: 'Sapiens', author: 'Yuval Noah Harari', publishedYear: 2011, genre: 'Non-Fiction' });
+library.addBook({ title: '1984', author: 'George Orwell', publishedYear: 1949, genre: types_1.Genre.FICTION });
+library.addBook({ title: 'Sapiens', author: 'Yuval Noah Harari', publishedYear: 2011, genre: types_1.Genre.NONFICTION });
 console.log(library.getBooks());
 library.removeBook('1984');
-console.log(library.getBooks());
+library.removeBook('Sapiens');
+console.log(`Books available at the ${library.getName}:
+  ${JSON.stringify(library.getBooks())}`);

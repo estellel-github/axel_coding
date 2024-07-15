@@ -1,6 +1,6 @@
 import { Genre, BookDetails } from './types';
 
-export const validGenres: Genre[] = ["Fiction", "Non-Fiction", "Science", "Biography", "N/A"];
+export const validGenres = [Genre.Fiction, Genre.NonFiction, Genre.Science, Genre.Biography, Genre.NotApplicable];
 
 export class Book {
 
@@ -17,6 +17,7 @@ export class Book {
   }
 
   // Getters and setters
+
   get getTitle(): string {
     return this.#title;
   }
@@ -55,11 +56,11 @@ export class Book {
   }
 
   set genre(genreInput: Genre) {
-    if (validGenres.includes(genreInput)) {
+    if (Object.values(Genre).includes(genreInput)) {
       this.#genre = genreInput;
     }
-    else if (typeof genreInput != "string") {
-      this.#genre = "N/A";
+    else {
+      this.#genre = Genre.NotApplicable;
       throw new Error("Please input a valid genre. The genre has been set to 'N/A' for now.")
     }
   }
@@ -68,7 +69,7 @@ export class Book {
       title: this.#title,
       author: this.#author,
       publishedYear: this.#publishedYear,
-      genre: this.genre,
+      genre: this.#genre,
     }
   }
 }

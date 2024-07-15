@@ -1,4 +1,10 @@
-export type Genre = "Fiction" | "Non-Fiction" | "Science" | "Biography" | "N/A";
+export enum Genre {
+  Fiction = "Fiction",
+  NonFiction = "Non-Fiction",
+  Science = "Science",
+  Biography = "Biography",
+  NotApplicable = "N/A",
+}
 
 export interface BookDetails {
   title: string;

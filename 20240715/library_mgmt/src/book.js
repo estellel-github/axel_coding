@@ -13,7 +13,8 @@ var __classPrivateFieldGet = (this && this.__classPrivateFieldGet) || function (
 var _Book_title, _Book_author, _Book_publishedYear, _Book_genre;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Book = exports.validGenres = void 0;
-exports.validGenres = ["Fiction", "Non-Fiction", "Science", "Biography", "N/A"];
+const types_1 = require("./types");
+exports.validGenres = [types_1.Genre.FICTION, types_1.Genre.NONFICTION, types_1.Genre.SCIENCE, types_1.Genre.BIOGRAPHY, types_1.Genre.NA];
 class Book {
     constructor(bookDetails) {
         _Book_title.set(this, void 0);
@@ -63,11 +64,11 @@ class Book {
         return __classPrivateFieldGet(this, _Book_genre, "f");
     }
     set genre(genreInput) {
-        if (exports.validGenres.includes(genreInput)) {
+        if (Object.values(types_1.Genre).includes(genreInput)) {
             __classPrivateFieldSet(this, _Book_genre, genreInput, "f");
         }
-        else if (typeof genreInput != "string") {
-            __classPrivateFieldSet(this, _Book_genre, "N/A", "f");
+        else {
+            __classPrivateFieldSet(this, _Book_genre, types_1.Genre.NA, "f");
             throw new Error("Please input a valid genre. The genre has been set to 'N/A' for now.");
         }
     }
@@ -76,7 +77,7 @@ class Book {
             title: __classPrivateFieldGet(this, _Book_title, "f"),
             author: __classPrivateFieldGet(this, _Book_author, "f"),
             publishedYear: __classPrivateFieldGet(this, _Book_publishedYear, "f"),
-            genre: this.genre,
+            genre: __classPrivateFieldGet(this, _Book_genre, "f"),
         };
     }
 }
