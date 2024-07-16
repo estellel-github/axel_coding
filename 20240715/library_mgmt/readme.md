@@ -114,3 +114,51 @@ console.log(library.getBooks());
 * Implement getter and setter methods to access and modify private properties.
 * Learn how to organize code into modules and use export and import statements.
 This exercise will help you gain practical experience with TypeScript's features in a real-world context.
+
+ADDITION JULY 16: INHERITANCE
+
+# Part3: Inheritance 
+
+You will extend the existing library management system to include different types of digital books. This will involve using inheritance to create specific book types, implementing multilevel inheritance, and overriding methods in child classes.
+
+New File Structure
+
+/LibraryManagement
+
+|-- /src
+
+|   |-- Book.ts
+
+|   |-- Library.ts
+
+|   |-- Types.ts
+
+|   |-- DigitalBook.ts
+
+|   |-- AudioBook.ts
+
+|-- tsconfig.json
+
+
+## Step 1: Extend the Types.ts File
+1. Add a new type for the format of digital books.
+   * Define a type DigitalBookFormat that can have values 'PDF', 'EPUB', 'MOBI', or 'AUDIO'.
+
+## Step 2: Create a New File DigitalBook.ts
+1. Define a new class DigitalBook that extends Book.
+   * Add properties format (type DigitalBookFormat) and fileSize (number, representing the file size in MB).
+   * Add appropriate getters and setters for format and fileSize.
+   * Override the getBookDetails() method to include the format and file size in the details.
+
+## Step 3: Create a New File AudioBook.ts
+1. Define a new class AudioBook that extends DigitalBook.
+   * Add properties duration (number, representing the duration in minutes) and narrator (string).
+   * Add appropriate getters and setters for duration and narrator.
+   * Override the getBookDetails() method to include the narrator and duration in the details.
+
+## Step 4: Update the Library.ts File
+
+1. Update the Library class to handle different types of books.
+   * Add methods to handle adding and removing books from the library.
+   * Ensure the methods addBook, removeBook, getBooks, and getBookDetails work with all book types.
+2. Add example usage to demonstrate adding and managing digital books and audiobooks.

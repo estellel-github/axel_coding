@@ -12,7 +12,6 @@ var __classPrivateFieldGet = (this && this.__classPrivateFieldGet) || function (
 };
 var _Library_name, _Library_address, _Library_books;
 Object.defineProperty(exports, "__esModule", { value: true });
-const types_1 = require("./types");
 const book_1 = require("./book");
 class Library {
     constructor(libraryDetails) {
@@ -43,11 +42,11 @@ class Library {
 }
 _Library_name = new WeakMap(), _Library_address = new WeakMap(), _Library_books = new WeakMap();
 // TESTS
-const library = new Library({ name: 'City Library', address: '123 Main St' });
-library.addBook({ title: '1984', author: 'George Orwell', publishedYear: 1949, genre: types_1.Genre.FICTION });
-library.addBook({ title: 'Sapiens', author: 'Yuval Noah Harari', publishedYear: 2011, genre: types_1.Genre.NONFICTION });
+const library = new Library({ name: "City Library", address: "123 Main St" });
+library.addBook({ title: "1984", author: "George Orwell", publishedYear: 1949, genre: "Fiction" });
+library.addBook({ title: "Sapiens", author: "Yuval Noah Harari", publishedYear: 2011, genre: "Non-Fiction" });
+library.addBook({ title: "Digital Fortress", author: "Dan Brown", publishedYear: 1998, genre: "Fiction", format: "PDF", fileSize: 5 });
+library.addBook({ title: "Becoming", author: "Michelle Obama", publishedYear: 2018, genre: "Biography", format: "AUDIO", fileSize: 200, duration: 1140, narrator: "Michelle Obama" });
 console.log(library.getBooks());
-library.removeBook('1984');
-library.removeBook('Sapiens');
-console.log(`Books available at the ${library.getName}:
-  ${JSON.stringify(library.getBooks())}`);
+library.removeBook("1984");
+console.log(`Books available at the ${library.getName}: ${JSON.stringify(library.getBooks())}`);

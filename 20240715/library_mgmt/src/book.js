@@ -1,111 +1,87 @@
 "use strict";
-var __classPrivateFieldSet = (this && this.__classPrivateFieldSet) || function (receiver, state, value, kind, f) {
-    if (kind === "m") throw new TypeError("Private method is not writable");
-    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a setter");
-    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
-    return (kind === "a" ? f.call(receiver, value) : f ? f.value = value : state.set(receiver, value)), value;
-};
-var __classPrivateFieldGet = (this && this.__classPrivateFieldGet) || function (receiver, state, kind, f) {
-    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a getter");
-    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
-    return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
-};
-var _Book_title, _Book_author, _Book_publishedYear, _Book_genre;
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Book = exports.validGenres = void 0;
+exports.Book = void 0;
 const types_1 = require("./types");
-exports.validGenres = [types_1.Genre.FICTION, types_1.Genre.NONFICTION, types_1.Genre.SCIENCE, types_1.Genre.BIOGRAPHY, types_1.Genre.NA];
 class Book {
-    constructor(bookDetails) {
-        _Book_title.set(this, void 0);
-        _Book_author.set(this, void 0);
-        _Book_publishedYear.set(this, void 0);
-        _Book_genre.set(this, void 0);
-        __classPrivateFieldSet(this, _Book_title, bookDetails.title, "f");
-        __classPrivateFieldSet(this, _Book_author, bookDetails.author, "f");
-        __classPrivateFieldSet(this, _Book_publishedYear, bookDetails.publishedYear, "f");
-        __classPrivateFieldSet(this, _Book_genre, bookDetails.genre, "f");
+    constructor(bookDetails = {
+        title: "N/A",
+        author: "N/A",
+        publishedYear: 0,
+        genre: "N/A",
+    }) {
+        this._title = bookDetails.title;
+        this._author = bookDetails.author;
+        this._publishedYear = bookDetails.publishedYear;
+        this._genre = bookDetails.genre;
     }
     // Getters and setters
     get getTitle() {
-        return __classPrivateFieldGet(this, _Book_title, "f");
+        return this._title;
     }
     set setTitle(titleInput) {
         if (typeof titleInput === "string") {
-            __classPrivateFieldSet(this, _Book_title, titleInput, "f");
+            this._title = titleInput;
         }
         else {
-            throw new Error("Please input a title");
+            console.log("Please input a title");
         }
     }
-    get author() {
-        return __classPrivateFieldGet(this, _Book_author, "f");
+    get getAuthor() {
+        return this._author;
     }
-    set author(authorInput) {
+    set setAuthor(authorInput) {
         if (typeof authorInput === "string") {
-            __classPrivateFieldSet(this, _Book_author, authorInput, "f");
+            this._author = authorInput;
         }
         else {
-            throw new Error("Please input a name for the author");
+            console.log("Please input a name for the author");
         }
     }
-    get publishedYear() {
-        return __classPrivateFieldGet(this, _Book_publishedYear, "f");
+    get getPublishedYear() {
+        return this._publishedYear;
     }
-    set publishedYear(yearInput) {
+    set setPublishedYear(yearInput) {
         if (yearInput > -800) {
-            __classPrivateFieldSet(this, _Book_publishedYear, yearInput, "f");
+            this._publishedYear = yearInput;
         }
         else {
-            throw new Error("Please input a valid year. The year has been set to 'N/A' for now.");
+            console.log("Please input a valid year.");
         }
     }
-    get genre() {
-        return __classPrivateFieldGet(this, _Book_genre, "f");
+    get getGenre() {
+        return this._genre;
     }
-    set genre(genreInput) {
-        if (Object.values(types_1.Genre).includes(genreInput)) {
-            __classPrivateFieldSet(this, _Book_genre, genreInput, "f");
+    set setGenre(genreInput) {
+        if (types_1.genres.includes(genreInput)) {
+            this._genre = genreInput;
         }
         else {
-            __classPrivateFieldSet(this, _Book_genre, types_1.Genre.NA, "f");
-            throw new Error("Please input a valid genre. The genre has been set to 'N/A' for now.");
+            this._genre = "N/A";
         }
     }
     getBookDetails() {
         return {
-            title: __classPrivateFieldGet(this, _Book_title, "f"),
-            author: __classPrivateFieldGet(this, _Book_author, "f"),
-            publishedYear: __classPrivateFieldGet(this, _Book_publishedYear, "f"),
-            genre: __classPrivateFieldGet(this, _Book_genre, "f"),
+            title: this._title,
+            author: this._author,
+            publishedYear: this._publishedYear,
+            genre: this._genre,
         };
     }
 }
 exports.Book = Book;
-_Book_title = new WeakMap(), _Book_author = new WeakMap(), _Book_publishedYear = new WeakMap(), _Book_genre = new WeakMap();
 // Creating new object + tests
-/*
 const lilithsBrood = new Book({
-  title: "Lilith's Brood",
-  author: "Octavia Butler",
-  publishedYear: 0,
-  genre: "N/A",
+    title: "Lilith's Brood",
+    author: "Octavia Butler",
+    publishedYear: 0,
+    genre: "N/A",
 });
-
-console.log(`Current state of book: ${JSON.stringify(lilithsBrood.getBookDetails())}`);
-
-try {
-  lilithsBrood.publishedYear = 1987;
-} catch (error: any) {
-  console.error(error.message);
-}
-
-console.log(`Current state of book: ${JSON.stringify(lilithsBrood.getBookDetails())}`);
-
-try {
-  lilithsBrood.genre = "Fiction";
-} catch (error: any) {
-  console.error(error.message);
-}
-
-console.log(`Current state of book: ${JSON.stringify(lilithsBrood.getBookDetails())}`); */ 
+console.log(`___________________________________________________`);
+lilithsBrood.setTitle = "Lilith's Brood - Exogenesis Trilogy";
+lilithsBrood.setPublishedYear = 1987;
+lilithsBrood.setGenre = "Fiction";
+console.log(`___________________________________________________`);
+console.log(JSON.stringify(lilithsBrood.getBookDetails()));
+const newBook = new Book;
+console.log(`___________________________________________________`);
+console.log(JSON.stringify(newBook.getBookDetails()));

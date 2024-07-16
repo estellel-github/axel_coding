@@ -18,3 +18,17 @@ export interface IBookDetails {
   publishedYear: number;
   genre: Genre;
 }
+
+export const digitalBooks = ["PDF", "EPUB", "MOBI", "AUDIO"] as const;
+
+export type DigitalBookFormat = typeof digitalBooks[number];
+
+export interface IDigitalBookDetails extends IBookDetails {
+  format: DigitalBookFormat,
+  fileSize: number,
+}
+
+export interface IAudioBookDetails extends IDigitalBookDetails {
+  duration: number; // in minutes
+  narrator: string;
+}

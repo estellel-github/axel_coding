@@ -1,13 +1,12 @@
 import { Genre, genres, IBookDetails } from './types';
 
-// export const validGenres = [Genre.Fiction, Genre.NonFiction, Genre.Science, Genre.Biography, Genre.NotApplicable];
 
 export class Book {
 
-  #title: string;
-  #author: string;
-  #publishedYear: number;
-  #genre: Genre;
+  private _title: string;
+  private _author: string;
+  private _publishedYear: number;
+  private _genre: Genre;
 
   constructor(bookDetails: IBookDetails = {
     title: "N/A",
@@ -15,66 +14,65 @@ export class Book {
     publishedYear: 0,
     genre: "N/A",
   }) {
-    this.#title = bookDetails.title;
-    this.#author = bookDetails.author;
-    this.#publishedYear = bookDetails.publishedYear;
-    this.#genre = bookDetails.genre;
+    this._title = bookDetails.title;
+    this._author = bookDetails.author;
+    this._publishedYear = bookDetails.publishedYear;
+    this._genre = bookDetails.genre;
   }
 
   // Getters and setters
 
   get getTitle(): string {
-    return this.#title;
+    return this._title;
   }
   set setTitle(titleInput: string) {
     if (typeof titleInput === "string") {
-      this.#title = titleInput;
+      this._title = titleInput;
     } else {
-      throw new Error("Please input a title");
+      console.log("Please input a title");
     }
   }
 
-  get author(): string {
-    return this.#author;
+  get getAuthor(): string {
+    return this._author;
   }
-  set author(authorInput: string) {
+  set setAuthor(authorInput: string) {
     if (typeof authorInput === "string") {
-      this.#author = authorInput;
+      this._author = authorInput;
     } else {
-      throw new Error("Please input a name for the author");
+      console.log("Please input a name for the author");
     }
   }
 
-  get publishedYear(): number {
-    return this.#publishedYear;
+  get getPublishedYear(): number {
+    return this._publishedYear;
   }
-  set publishedYear(yearInput: number) {
+  set setPublishedYear(yearInput: number) {
     if (yearInput > -800) {
-      this.#publishedYear = yearInput;
+      this._publishedYear = yearInput;
     } else {
-      throw new Error("Please input a valid year. The year has been set to 'N/A' for now.");
+      console.log("Please input a valid year.");
     }
   }
 
-  get genre(): Genre {
-    return this.#genre;
+  get getGenre(): Genre {
+    return this._genre;
   }
 
-  set genre(genreInput: Genre) {
+  set setGenre(genreInput: Genre) {
     if (genres.includes(genreInput)) {
-      this.#genre = genreInput;
+      this._genre = genreInput;
     } else {
-      this.#genre = "N/A";
-      throw new Error("Please input a valid genre. The genre has been set to 'N/A' for now.");
+      this._genre = "N/A";
     }
   }
 
   getBookDetails() {
     return {
-      title: this.#title,
-      author: this.#author,
-      publishedYear: this.#publishedYear,
-      genre: this.#genre,
+      title: this._title,
+      author: this._author,
+      publishedYear: this._publishedYear,
+      genre: this._genre,
     }
   }
 }
@@ -87,25 +85,16 @@ const lilithsBrood = new Book({
   publishedYear: 0,
   genre: "N/A",
 });
+console.log(`___________________________________________________`);
 
-console.log(`Current state of book: ${JSON.stringify(lilithsBrood.getBookDetails())}`);
+lilithsBrood.setTitle = "Lilith's Brood - Exogenesis Trilogy";
+lilithsBrood.setPublishedYear = 1987;
+lilithsBrood.setGenre = "Fiction";
 
-try {
-  lilithsBrood.publishedYear = 1987;
-} catch (error: any) {
-  console.error(error.message);
-}
-
-console.log(`Current state of book: ${JSON.stringify(lilithsBrood.getBookDetails())}`);
-
-try {
-  lilithsBrood.genre = "Fiction";
-} catch (error: any) {
-  console.error(error.message);
-}
-
-console.log(`Current state of book: ${JSON.stringify(lilithsBrood.getBookDetails())}`);
+console.log(`___________________________________________________`);
+console.log(JSON.stringify(lilithsBrood.getBookDetails()));
 
 const newBook = new Book;
 
+console.log(`___________________________________________________`);
 console.log(JSON.stringify(newBook.getBookDetails()));
