@@ -1,4 +1,4 @@
-import { Genre, BookDetails } from "./types";
+import { Genre, IBookDetails } from "./types";
 import { Book } from "./book";
 
 interface LibraryDetails {
@@ -17,7 +17,7 @@ class Library {
     this.#books = [];
   }
 
-  addBook(bookDetails: BookDetails): Book[] {
+  addBook(bookDetails: IBookDetails): Book[] {
     const book = new Book(bookDetails);
     this.#books.push(book);
     return this.#books;
@@ -27,7 +27,7 @@ class Library {
     return this.#books = this.#books.filter(book => book.getTitle !== bookTitle);
   }
 
-  getBooks(): BookDetails[] | string {
+  getBooks(): IBookDetails[] | string {
     if (this.#books.length === 0) {
       return "No books are available currently.";
     }
@@ -43,8 +43,8 @@ class Library {
 
 const library = new Library({ name: "City Library", address: "123 Main St" });
 
-library.addBook({ title: "1984", author: "George Orwell", publishedYear: 1949, genre: Genre.Fiction });
-library.addBook({ title: "Sapiens", author: "Yuval Noah Harari", publishedYear: 2011, genre: Genre.NonFiction });
+library.addBook({ title: "1984", author: "George Orwell", publishedYear: 1949, genre: "Fiction" });
+library.addBook({ title: "Sapiens", author: "Yuval Noah Harari", publishedYear: 2011, genre: "Non-Fiction" });
 
 console.log(library.getBooks());
 

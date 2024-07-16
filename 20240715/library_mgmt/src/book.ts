@@ -1,6 +1,6 @@
-import { Genre, BookDetails } from './types';
+import { Genre, genres, IBookDetails } from './types';
 
-export const validGenres = [Genre.Fiction, Genre.NonFiction, Genre.Science, Genre.Biography, Genre.NotApplicable];
+// export const validGenres = [Genre.Fiction, Genre.NonFiction, Genre.Science, Genre.Biography, Genre.NotApplicable];
 
 export class Book {
 
@@ -9,7 +9,12 @@ export class Book {
   #publishedYear: number;
   #genre: Genre;
 
-  constructor(bookDetails: BookDetails) {
+  constructor(bookDetails: IBookDetails = {
+    title: "N/A",
+    author: "N/A",
+    publishedYear: 0,
+    genre: "N/A",
+  }) {
     this.#title = bookDetails.title;
     this.#author = bookDetails.author;
     this.#publishedYear = bookDetails.publishedYear;
@@ -56,14 +61,14 @@ export class Book {
   }
 
   set genre(genreInput: Genre) {
-    if (Object.values(Genre).includes(genreInput)) {
+    if (genres.includes(genreInput)) {
       this.#genre = genreInput;
-    }
-    else {
-      this.#genre = Genre.NotApplicable;
-      throw new Error("Please input a valid genre. The genre has been set to 'N/A' for now.")
+    } else {
+      this.#genre = "N/A";
+      throw new Error("Please input a valid genre. The genre has been set to 'N/A' for now.");
     }
   }
+
   getBookDetails() {
     return {
       title: this.#title,
@@ -75,11 +80,11 @@ export class Book {
 }
 
 // Creating new object + tests
-/* 
+
 const lilithsBrood = new Book({
   title: "Lilith's Brood",
   author: "Octavia Butler",
-  publishedYear: 0, 
+  publishedYear: 0,
   genre: "N/A",
 });
 
@@ -99,4 +104,8 @@ try {
   console.error(error.message);
 }
 
-console.log(`Current state of book: ${JSON.stringify(lilithsBrood.getBookDetails())}`); */
+console.log(`Current state of book: ${JSON.stringify(lilithsBrood.getBookDetails())}`);
+
+const newBook = new Book;
+
+console.log(JSON.stringify(newBook.getBookDetails()));
