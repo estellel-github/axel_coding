@@ -22,7 +22,7 @@ export class Book {
 
   // Getters and setters
 
-  get getTitle(): string {
+  get title(): string {
     return this._title;
   }
   set setTitle(titleInput: string) {
@@ -33,7 +33,7 @@ export class Book {
     }
   }
 
-  get getAuthor(): string {
+  get author(): string {
     return this._author;
   }
   set setAuthor(authorInput: string) {
@@ -44,7 +44,7 @@ export class Book {
     }
   }
 
-  get getPublishedYear(): number {
+  get publishedYear(): number {
     return this._publishedYear;
   }
   set setPublishedYear(yearInput: number) {
@@ -55,7 +55,7 @@ export class Book {
     }
   }
 
-  get getGenre(): Genre {
+  get genre(): Genre {
     return this._genre;
   }
 

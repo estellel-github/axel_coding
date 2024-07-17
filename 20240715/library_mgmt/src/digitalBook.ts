@@ -1,25 +1,30 @@
 import { Book } from "./book";
-import { DigitalBookFormat, IDigitalBookDetails, Genre } from "./types";
+import { digitalBooks, DigitalBookFormat, IDigitalBookDetails, Genre } from "./types";
 
 export class DigitalBook extends Book {
   private _format: DigitalBookFormat;
   private _fileSize: number;
-  
+
   constructor(digitalBookDetails: IDigitalBookDetails) {
     super(digitalBookDetails);
     this._format = digitalBookDetails.format;
     this._fileSize = digitalBookDetails.fileSize;
   }
 
-  get getFormat(): DigitalBookFormat {
+  get format(): DigitalBookFormat {
     return this._format;
   }
 
   set setFormat(formatInput: DigitalBookFormat) {
-    this._format = formatInput;
+    if (digitalBooks.includes(formatInput)) {
+      this._format = formatInput;
+    }
+    else {
+      this._format = "N/A";
+    }
   }
 
-  get getFileSize(): number {
+  get fileSize(): number {
     return this._fileSize;
   }
 

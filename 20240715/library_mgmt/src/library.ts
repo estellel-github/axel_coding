@@ -24,7 +24,7 @@ class Library {
   }
 
   removeBook(bookTitle: string): Book[] {
-    return this.#books = this.#books.filter(book => book.getTitle !== bookTitle);
+    return this.#books = this.#books.filter(book => book.title !== bookTitle);
   }
 
   getBooks(): IBookDetails[] | string {
@@ -34,7 +34,7 @@ class Library {
     return (this.#books.map(book => book.getBookDetails()));
   }
 
-  get getName() {
+  get name() {
     return this.#name;
   }
 }
@@ -52,4 +52,4 @@ console.log(library.getBooks());
 
 library.removeBook("1984");
 
-console.log(`Books available at the ${library.getName}: ${JSON.stringify(library.getBooks())}`);
+console.log(`Books available at the ${library.name}: ${JSON.stringify(library.getBooks())}`);

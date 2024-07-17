@@ -11,4 +11,4 @@ exports.digitalBooks = exports.genres = void 0;
 // Replacing ENUM:
 // Create array (see constant array/string literals/ as const = tuple with readonly elements)
 exports.genres = ["Fiction", "Non-Fiction", "Science", "Biography", "N/A"];
-exports.digitalBooks = ["PDF", "EPUB", "MOBI", "AUDIO"];
+exports.digitalBooks = ["PDF", "EPUB", "MOBI", "AUDIO", "N/A"];

@@ -2,19 +2,25 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.DigitalBook = void 0;
 const book_1 = require("./book");
+const types_1 = require("./types");
 class DigitalBook extends book_1.Book {
     constructor(digitalBookDetails) {
         super(digitalBookDetails);
         this._format = digitalBookDetails.format;
         this._fileSize = digitalBookDetails.fileSize;
     }
-    get getFormat() {
+    get format() {
         return this._format;
     }
     set setFormat(formatInput) {
-        this._format = formatInput;
+        if (types_1.digitalBooks.includes(formatInput)) {
+            this._format = formatInput;
+        }
+        else {
+            this._format = "N/A";
+        }
     }
-    get getFileSize() {
+    get fileSize() {
         return this._fileSize;
     }
     set setFileSize(fileSizeInput) {

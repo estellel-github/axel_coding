@@ -28,7 +28,7 @@ class Library {
         return __classPrivateFieldGet(this, _Library_books, "f");
     }
     removeBook(bookTitle) {
-        return __classPrivateFieldSet(this, _Library_books, __classPrivateFieldGet(this, _Library_books, "f").filter(book => book.getTitle !== bookTitle), "f");
+        return __classPrivateFieldSet(this, _Library_books, __classPrivateFieldGet(this, _Library_books, "f").filter(book => book.title !== bookTitle), "f");
     }
     getBooks() {
         if (__classPrivateFieldGet(this, _Library_books, "f").length === 0) {
@@ -36,7 +36,7 @@ class Library {
         }
         return (__classPrivateFieldGet(this, _Library_books, "f").map(book => book.getBookDetails()));
     }
-    get getName() {
+    get name() {
         return __classPrivateFieldGet(this, _Library_name, "f");
     }
 }
@@ -49,4 +49,4 @@ library.addBook({ title: "Digital Fortress", author: "Dan Brown", publishedYear:
 library.addBook({ title: "Becoming", author: "Michelle Obama", publishedYear: 2018, genre: "Biography", format: "AUDIO", fileSize: 200, duration: 1140, narrator: "Michelle Obama" });
 console.log(library.getBooks());
 library.removeBook("1984");
-console.log(`Books available at the ${library.getName}: ${JSON.stringify(library.getBooks())}`);
+console.log(`Books available at the ${library.name}: ${JSON.stringify(library.getBooks())}`);

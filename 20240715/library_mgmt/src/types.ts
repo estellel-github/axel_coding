@@ -19,8 +19,7 @@ export interface IBookDetails {
   genre: Genre;
 }
 
-export const digitalBooks = ["PDF", "EPUB", "MOBI", "AUDIO"] as const;
-
+export const digitalBooks = ["PDF", "EPUB", "MOBI", "AUDIO", "N/A"] as const;
 export type DigitalBookFormat = typeof digitalBooks[number];
 
 export interface IDigitalBookDetails extends IBookDetails {

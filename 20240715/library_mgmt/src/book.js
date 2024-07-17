@@ -15,7 +15,7 @@ class Book {
         this._genre = bookDetails.genre;
     }
     // Getters and setters
-    get getTitle() {
+    get title() {
         return this._title;
     }
     set setTitle(titleInput) {
@@ -26,7 +26,7 @@ class Book {
             console.log("Please input a title");
         }
     }
-    get getAuthor() {
+    get author() {
         return this._author;
     }
     set setAuthor(authorInput) {
@@ -37,7 +37,7 @@ class Book {
             console.log("Please input a name for the author");
         }
     }
-    get getPublishedYear() {
+    get publishedYear() {
         return this._publishedYear;
     }
     set setPublishedYear(yearInput) {
@@ -48,7 +48,7 @@ class Book {
             console.log("Please input a valid year.");
         }
     }
-    get getGenre() {
+    get genre() {
         return this._genre;
     }
     set setGenre(genreInput) {

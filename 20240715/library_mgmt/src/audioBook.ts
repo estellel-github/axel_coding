@@ -12,7 +12,7 @@ export class AudioBook extends DigitalBook {
     this._narrator = audioBookDetails.narrator;
   }
 
-  get getDuration(): number {
+  get duration(): number {
     return this._duration;
   }
 
@@ -20,7 +20,7 @@ export class AudioBook extends DigitalBook {
     this._duration = durationInput;
   }
 
-  get getNarrator(): string {
+  get narrator(): string {
     return this._narrator;
   }
 
