@@ -11,13 +11,13 @@ class AudioBook extends digitalBook_1.DigitalBook {
     get duration() {
         return this._duration;
     }
-    set setDuration(durationInput) {
+    set duration(durationInput) {
         this._duration = durationInput;
     }
     get narrator() {
         return this._narrator;
     }
-    set setNarrator(narratorInput) {
+    set narrator(narratorInput) {
         this._narrator = narratorInput;
     }
 }

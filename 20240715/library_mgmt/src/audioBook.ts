@@ -16,7 +16,7 @@ export class AudioBook extends DigitalBook {
     return this._duration;
   }
 
-  set setDuration(durationInput: number) {
+  set duration(durationInput: number) {
     this._duration = durationInput;
   }
 
@@ -24,7 +24,7 @@ export class AudioBook extends DigitalBook {
     return this._narrator;
   }
 
-  set setNarrator(narratorInput: string) {
+  set narrator(narratorInput: string) {
     this._narrator = narratorInput;
   }
 

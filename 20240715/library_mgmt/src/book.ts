@@ -25,7 +25,7 @@ export class Book {
   get title(): string {
     return this._title;
   }
-  set setTitle(titleInput: string) {
+  set title(titleInput: string) {
     if (typeof titleInput === "string") {
       this._title = titleInput;
     } else {
@@ -36,7 +36,7 @@ export class Book {
   get author(): string {
     return this._author;
   }
-  set setAuthor(authorInput: string) {
+  set author(authorInput: string) {
     if (typeof authorInput === "string") {
       this._author = authorInput;
     } else {
@@ -47,7 +47,7 @@ export class Book {
   get publishedYear(): number {
     return this._publishedYear;
   }
-  set setPublishedYear(yearInput: number) {
+  set publishedYear(yearInput: number) {
     if (yearInput > -800) {
       this._publishedYear = yearInput;
     } else {
@@ -59,7 +59,7 @@ export class Book {
     return this._genre;
   }
 
-  set setGenre(genreInput: Genre) {
+  set genre(genreInput: Genre) {
     if (genres.includes(genreInput)) {
       this._genre = genreInput;
     } else {
@@ -87,9 +87,9 @@ const lilithsBrood = new Book({
 });
 console.log(`___________________________________________________`);
 
-lilithsBrood.setTitle = "Lilith's Brood - Exogenesis Trilogy";
-lilithsBrood.setPublishedYear = 1987;
-lilithsBrood.setGenre = "Fiction";
+lilithsBrood.title = "Lilith's Brood - Exogenesis Trilogy";
+lilithsBrood.publishedYear = 1987;
+lilithsBrood.genre = "Fiction";
 
 console.log(`___________________________________________________`);
 console.log(JSON.stringify(lilithsBrood.getBookDetails()));

@@ -15,7 +15,7 @@ export class DigitalBook extends Book {
     return this._format;
   }
 
-  set setFormat(formatInput: DigitalBookFormat) {
+  set format(formatInput: DigitalBookFormat) {
     if (digitalBooks.includes(formatInput)) {
       this._format = formatInput;
     }
@@ -28,7 +28,7 @@ export class DigitalBook extends Book {
     return this._fileSize;
   }
 
-  set setFileSize(fileSizeInput: number) {
+  set fileSize(fileSizeInput: number) {
     this._fileSize = fileSizeInput;
   }
 
