@@ -1,0 +1,109 @@
+--------------------------
+Path: combined.txt
+
+--------------------------
+Path: config.ts
+import dotenv from "dotenv";
+
+dotenv.config();
+
+export const port = process.env.PORT || 4000;
+
+export const customMessage: string = process.env.CUSTOM_MESSAGE || "Default message";
+--------------------------
+Path: dummyData.ts
+export interface IStudent {
+  id: number;
+  name: string;
+  grade: string;
+}
+
+export const students: IStudent[] = [
+  { id: 1, name: "Alice Johnson", grade: "A" },
+  { id: 2, name: "Bob Smith", grade: "B" },
+  { id: 3, name: "Charlie Davis", grade: "C" },
+  { id: 4, name: "Diana Brooks", grade: "A" },
+  { id: 5, name: "Evan Thomas", grade: "B" },
+  { id: 6, name: "Fiona Clarke", grade: "A" },
+  { id: 7, name: "George Wright", grade: "C" },
+  { id: 8, name: "Hannah Lee", grade: "B" },
+  { id: 9, name: "Ian Scott", grade: "A" },
+  { id: 10, name: "Julia King", grade: "B" }
+];
+--------------------------
+Path: helpers.ts
+import { customMessage } from "./config";
+
+export const greeting = () : string => {
+  return "Hello from the helper module!";
+}
+
+export const message = () : string => {
+  return customMessage;
+}
+--------------------------
+Path: index.ts
+import express, { Request, Response } from "express";
+import { port } from "./config";
+import { logServerMessage } from "./logger";
+import { students, IStudent } from "./dummyData";
+
+const app = express();
+
+app.use(express.json());
+
+const apiRouter = express.Router();
+
+app.use('/api', apiRouter);
+
+app.get("/students/:id", (res: Response, req: Request) => {
+  const studentId = parseInt(req.params.id);
+  const student = students.find((s) => s.id === studentId);
+  if (!student) {
+    res.status(404).json({ message: "No student found" })
+  }
+  else {
+    res.json(student);
+  }
+})
+
+app.post("/students", (res: Response, req: Request) => {
+  const newStudent: IStudent = req.body;
+  students.push(newStudent);
+  res.status(201).json(newStudent); // 201: successfully created
+})
+
+app.put("/students/:id", (res: Response, req: Request) => {
+  const studentId = parseInt(req.params.id);
+  const studentIndex = students.findIndex((s) => s.id === studentId);
+  if (studentIndex !== -1) { // if findIndex did not find anything (returns -1)
+    students[studentIndex].grade = req.body.grade;
+    res.json(students[studentIndex]);
+  }
+  else {
+    res.status(404).json({ message: "Student not found" });
+  }
+})
+
+app.delete("/students/:id", (res: Response, req: Request) => {
+  const studentId = parseInt(req.params.id);
+  const studentIndex = students.findIndex((s) => s.id === studentId);
+  if (studentIndex !== -1) {
+    students.splice(studentIndex, 1)
+    res.status(204).send(); // 204: successful response, no content
+  }
+  else {
+    res.status(404).json({ message: "Student not found" });
+  }
+})
+
+app.listen(port, () => logServerMessage(`Server is running on port ${port}`));
+--------------------------
+Path: logger.ts
+export const logServerMessage = (message: string): void => {
+  console.log(new Date().toISOString() + "|" + message);
+}
+---------------------------
+Path: .env
+PORT=4001
+CUSTOM_MESSAGE=Welcome to my Node.js app!
