@@ -212,7 +212,7 @@ h1 {
 }
 
 .footer-icon {
-  width: 30px; /* Adjust size as needed */
+  width: 30px;
   margin-bottom: 10px;
 }
 
@@ -324,7 +324,6 @@ main.menu {
   transform: translate(-50%, -50%);
 }
 
-/* Ensure portrait images cover the entire thumbnail area */
 .gallery img.portrait {
   width: 100%;
   height: auto;
